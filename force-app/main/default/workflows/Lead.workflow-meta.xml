@@ -1,0 +1,1027 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Lead_Email</fullName>
+        <description>Lead Email</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>aodom@quintevents.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/New_Lead</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>HS_Owner_Update</fullName>
+        <field>OwnerId</field>
+        <lookupValue>qescobar@quintevents.com</lookupValue>
+        <lookupValueType>User</lookupValueType>
+        <name>HS Owner Update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Set_Full_Phone</fullName>
+        <field>Phone</field>
+        <formula>Full_Phone__c</formula>
+        <name>Set Full Phone</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Set_Lead_Status_to_Deposit</fullName>
+        <description>Set Lead Status to &quot;Deposit&quot;</description>
+        <field>Status</field>
+        <literalValue>Deposit</literalValue>
+        <name>Set Lead Status to &quot;Deposit&quot;</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Status_field_time_stamp</fullName>
+        <field>Time_Stamp_Since_First_Status_Change__c</field>
+        <formula>LastModifiedDate</formula>
+        <name>Status field time stamp</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Subcriber_Update</fullName>
+        <field>Subscriber__c</field>
+        <literalValue>True</literalValue>
+        <name>Subcriber Update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Subscriber_Update_2</fullName>
+        <field>Subscriber__c</field>
+        <literalValue>True</literalValue>
+        <name>Subscriber Update 2</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Deposit_Request_Events</fullName>
+        <field>Deposit_Requested_Events__c</field>
+        <formula>IF(ISBLANK(Deposit_Requested_Events__c), Latest_Event_Interest__c, 
+Latest_Event_Interest__c &amp; &apos;, &apos; &amp; Deposit_Requested_Events__c)</formula>
+        <name>Update Deposit Request Events</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Lead_Status</fullName>
+        <field>Status</field>
+        <literalValue>Wait List</literalValue>
+        <name>Update Lead Status</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>company_removal</fullName>
+        <field>Company</field>
+        <name>company removal</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Null</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>field_update_latest_event_interest</fullName>
+        <field>Latest_Event_Interest__c</field>
+        <formula>IF( ISNEW(),
+IF( NOT(ISBLANK(COTA_Event_Interest__c)) , COTA_Event_Interest__c, 
+ IF( NOT(ISBLANK(DE_Event_Interest__c)) , DE_Event_Interest__c, 
+  IF( NOT(ISBLANK(GPE_Event_Interest__c)) , GPE_Event_Interest__c, 
+   IF( NOT(ISBLANK(HB_Event_Interest__c)) , HB_Event_Interest__c,
+    IF( NOT(ISBLANK(HC_Event_Interest__c)) , HC_Event_Interest__c, 
+     IF( NOT(ISBLANK(MOTOE_Event_Interest__c)) , MOTOE_Event_Interest__c, 
+      IF( NOT(ISBLANK(NBA_Event_Interest__c)) , NBA_Event_Interest__c, 
+       IF( NOT(ISBLANK(PB_Event_Interest__c)) , PB_Event_Interest__c, 
+	IF( NOT(ISBLANK(PROFOOTBALLHOF_Event_Interest__c)) , PROFOOTBALLHOF_Event_Interest__c, 
+         IF( NOT(ISBLANK(QE_Event_Interest__c)) , QE_Event_Interest__c, 
+          IF( NOT(ISBLANK(UFC_Event_Interest__c)) , UFC_Event_Interest__c, 
+           IF( NOT(ISBLANK(F1MX_Event_Interest__c)) , F1MX_Event_Interest__c,
+	    IF( NOT(ISBLANK(USATSE_Event_Interest__c)) , USATSE_Event_Interest__c,
+	     &quot;&quot;
+            )
+           )
+	  )
+	 )
+        )
+       )
+      )
+     )
+    )   
+   )
+  )
+ )
+) ,
+IF( ISCHANGED( COTA_Event_Interest__c ), COTA_Event_Interest__c,
+ IF( ISCHANGED( DE_Event_Interest__c ), DE_Event_Interest__c,
+  IF( ISCHANGED( GPE_Event_Interest__c ), GPE_Event_Interest__c,
+   IF( ISCHANGED( HB_Event_Interest__c ), HB_Event_Interest__c,
+    IF( ISCHANGED( HC_Event_Interest__c ), HC_Event_Interest__c,
+     IF( ISCHANGED( MOTOE_Event_Interest__c ), MOTOE_Event_Interest__c,
+      IF( ISCHANGED( NBA_Event_Interest__c ), NBA_Event_Interest__c,
+       IF( ISCHANGED( PB_Event_Interest__c ), PB_Event_Interest__c,
+        IF( ISCHANGED( PROFOOTBALLHOF_Event_Interest__c ), PROFOOTBALLHOF_Event_Interest__c,
+         IF( ISCHANGED( QE_Event_Interest__c ), QE_Event_Interest__c,
+          IF( ISCHANGED( UFC_Event_Interest__c ), UFC_Event_Interest__c,
+           IF( ISCHANGED( F1MX_Event_Interest__c ), F1MX_Event_Interest__c,
+            IF( ISCHANGED( USATSE_Event_Interest__c ), USATSE_Event_Interest__c,
+             &quot;&quot;
+            )
+           )
+          )
+         )
+        )
+       )
+      )
+     )
+    )
+   )
+  )
+ )
+)
+)</formula>
+        <name>update latest event interest</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>lead_assign_MMcCarthy</fullName>
+        <field>OwnerId</field>
+        <lookupValue>mmccarthy@quintevents.com</lookupValue>
+        <lookupValueType>User</lookupValueType>
+        <name>lead_assign_MMcCarthy</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>lead_assign_TStrittmatter</fullName>
+        <field>OwnerId</field>
+        <lookupValue>tstrittmatter@quintevents.com</lookupValue>
+        <lookupValueType>User</lookupValueType>
+        <name>lead_assign_TStrittmatter</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>lead_assign_aodo</fullName>
+        <field>OwnerId</field>
+        <lookupValue>aodom@quintevents.com</lookupValue>
+        <lookupValueType>User</lookupValueType>
+        <name>lead_assign_aodo</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>lead_assign_astu</fullName>
+        <field>OwnerId</field>
+        <lookupValue>astumler@quintevents.com</lookupValue>
+        <lookupValueType>User</lookupValueType>
+        <name>lead_assign_astu</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>lead_assign_broy</fullName>
+        <field>OwnerId</field>
+        <lookupValue>broy@quintevents.com</lookupValue>
+        <lookupValueType>User</lookupValueType>
+        <name>lead_assign_broy</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>lead_assign_brue</fullName>
+        <field>OwnerId</field>
+        <lookupValue>bruede@quintevents.com</lookupValue>
+        <lookupValueType>User</lookupValueType>
+        <name>lead_assign_brue</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>lead_assign_cbak</fullName>
+        <field>OwnerId</field>
+        <lookupValue>cbaker@quintevents.com</lookupValue>
+        <lookupValueType>User</lookupValueType>
+        <name>lead_assign_cbak</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>lead_assign_dhigg</fullName>
+        <field>OwnerId</field>
+        <lookupValue>dhiggins@quintevents.com</lookupValue>
+        <lookupValueType>User</lookupValueType>
+        <name>lead_assign_dhigg</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>lead_assign_dmeri</fullName>
+        <field>OwnerId</field>
+        <lookupValue>dmerino@quintevents.com</lookupValue>
+        <lookupValueType>User</lookupValueType>
+        <name>lead_assign_dmeri</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>lead_assign_dorm</fullName>
+        <field>OwnerId</field>
+        <lookupValue>dorman@quintevents.com</lookupValue>
+        <lookupValueType>User</lookupValueType>
+        <name>lead_assign_dorm</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>lead_assign_jpat</fullName>
+        <field>OwnerId</field>
+        <lookupValue>jpatel@quintevents.com</lookupValue>
+        <lookupValueType>User</lookupValueType>
+        <name>lead_assign_jpat</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>lead_assign_klan</fullName>
+        <field>OwnerId</field>
+        <lookupValue>klankford@quintevents.com</lookupValue>
+        <lookupValueType>User</lookupValueType>
+        <name>lead_assign_klan</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>lead_assign_kliv</fullName>
+        <field>OwnerId</field>
+        <lookupValue>klivingston@quintevents.com</lookupValue>
+        <lookupValueType>User</lookupValueType>
+        <name>lead_assign_kliv</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>lead_assign_lho</fullName>
+        <field>OwnerId</field>
+        <lookupValue>lhosborne@quintevents.com</lookupValue>
+        <lookupValueType>User</lookupValueType>
+        <name>lead_assign_lho</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>lead_assign_mcull</fullName>
+        <field>OwnerId</field>
+        <lookupValue>mstuart@quintevents.com</lookupValue>
+        <lookupValueType>User</lookupValueType>
+        <name>lead_assign_mcull</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>lead_assign_mpar</fullName>
+        <field>OwnerId</field>
+        <lookupValue>mparker@quintevents.com</lookupValue>
+        <lookupValueType>User</lookupValueType>
+        <name>lead_assign_mpar</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>update_Event_Interest_with_Latest</fullName>
+        <description>update Event Interest with Latest event Interest</description>
+        <field>Event_Interests__c</field>
+        <formula>IF(
+OR(
+ISNEW(),ISBLANK(Event_Interests__c)), Latest_Event_Interest__c,
+Latest_Event_Interest__c + &quot;, &quot; +PRIORVALUE(Event_Interests__c)
+)</formula>
+        <name>update Event Interest with Latest</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>update_Lead_Latest_Event_Interest</fullName>
+        <description>updates Lead Latest Event Interest based on Event Interest Picklist</description>
+        <field>Latest_Event_Interest__c</field>
+        <formula>Event_Interest_Picklist_PB__r.Name</formula>
+        <name>update Lead Latest Event Interest</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <outboundMessages>
+        <fullName>Leads_to_QNG</fullName>
+        <apiVersion>47.0</apiVersion>
+        <endpointUrl>https://qe360.quintevents.com/api/contacts</endpointUrl>
+        <fields>Email</fields>
+        <fields>Id</fields>
+        <fields>LastModifiedDate</fields>
+        <fields>OwnerId</fields>
+        <includeSessionId>false</includeSessionId>
+        <integrationUser>qescobar@quintevents.com</integrationUser>
+        <name>Leads to QNG</name>
+        <protected>false</protected>
+        <useDeadLetterQueue>false</useDeadLetterQueue>
+    </outboundMessages>
+    <rules>
+        <fullName>Blank HS Lead Owner</fullName>
+        <actions>
+            <name>HS_Owner_Update</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Lead.HS_Lead_Owner__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Lead Assign</fullName>
+        <active>false</active>
+        <formula>NOT(ISBLANK(HS_Lead_Owner__c))</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Lead Latest Event Status</fullName>
+        <actions>
+            <name>Update_Deposit_Request_Events</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>(
+(ISNEW() &amp;&amp; LOWER(Latest_Event_Status__c) = &apos;deposit&apos;) ||
+(ISCHANGED(Latest_Event_Status__c) &amp;&amp; LOWER(Latest_Event_Status__c) = &apos;deposit&apos;)
+)
+||
+((ISCHANGED(Event_Interest_Picklist__c) || ISCHANGED(Latest_Event_Interest__c)) &amp;&amp; LOWER(Latest_Event_Status__c) = &apos;deposit&apos;)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Lead Status set to Wait List</fullName>
+        <actions>
+            <name>Update_Lead_Status</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Lead.Waiting_List__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <description>Set lead Status field value to &quot;Wait List&quot;.</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Lead Type Requirement</fullName>
+        <active>false</active>
+        <description>-8/17/17 WK</description>
+        <formula>LastModifiedById != &quot;005i0000008nCZn&quot;</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Lead_Email</fullName>
+        <actions>
+            <name>Lead_Email</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Lead.Status</field>
+            <operation>equals</operation>
+            <value>Open</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Lead.QE_Event_Interest__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Leads to QNG</fullName>
+        <actions>
+            <name>Leads_to_QNG</name>
+            <type>OutboundMessage</type>
+        </actions>
+        <active>true</active>
+        <description>Sends Outbounds Message to QNG for Lead</description>
+        <formula>NOT($Setup.ByPass_Rules__c.Outbound_Messages__c) &amp;&amp; (ISNEW() || ISCHANGED(OwnerId) || ISCHANGED(Email))</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Set Full Phone Lead</fullName>
+        <actions>
+            <name>Set_Full_Phone</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>OR(AND(ISNEW(), NOT(ISBLANK(Full_Phone__c))), ISCHANGED(Full_Phone__c))</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Test</fullName>
+        <active>false</active>
+        <criteriaItems>
+            <field>User.Alias</field>
+            <operation>notEqual</operation>
+            <value>house</value>
+        </criteriaItems>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Time stamp on status</fullName>
+        <actions>
+            <name>Status_field_time_stamp</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>To capture time stamp since the lead status is changed from OPEN to Any value for first time.</description>
+        <formula>AND( 
+TEXT(PRIORVALUE(Status)) = &quot;OPEN&quot;, 
+ISCHANGED(Status), ISBLANK( Time_Stamp_Since_First_Status_Change__c ) 
+)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update Event Interest Picklist</fullName>
+        <active>false</active>
+        <description>Update Event Interest Picklist	from QNG Event Interest Picklist</description>
+        <formula>(ISNEW() &amp;&amp; NOT(ISBLANK(QNGEventInterestPicklist__c))) 
+||
+(ISCHANGED(QNGEventInterestPicklist__c) &amp;&amp; 
+NOT(ISBLANK(QNGEventInterestPicklist__c)))</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update Lead Event Interests based on Latest</fullName>
+        <actions>
+            <name>update_Event_Interest_with_Latest</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>update lead latest event interests based on Latest Event Interest</description>
+        <formula>OR(ISNEW(),ISCHANGED(Latest_Event_Interest__c))</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update Lead Latest Event Interests</fullName>
+        <actions>
+            <name>update_Lead_Latest_Event_Interest</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>update lead latest event interests based on Picklist</description>
+        <formula>AND(NOT(ISBLANK(Event_Interest_Picklist_PB__c)), OR(ISNEW(),ISCHANGED(Event_Interest_Picklist_PB__c)))</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update Lead Status based on Lead Latest Event Status</fullName>
+        <actions>
+            <name>Set_Lead_Status_to_Deposit</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Lead.Latest_Event_Status__c</field>
+            <operation>equals</operation>
+            <value>deposit</value>
+        </criteriaItems>
+        <description>Update &quot;Status&quot; on Lead to &quot;Deposit&quot; if value of &quot;Latest Event Status&quot; field on Lead gets changed  &quot;Deposit&quot;.
+- Deactivated on 5/4/2020, requested by Dian/Jordan.</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>assign_hubspot_lead</fullName>
+        <active>true</active>
+        <criteriaItems>
+            <field>Lead.form_type__c</field>
+            <operation>equals</operation>
+            <value>HubSpot</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Lead.Source__c</field>
+            <operation>notEqual</operation>
+            <value>web energy2engage.com</value>
+        </criteriaItems>
+        <description>Sends an outbound message to the sub app, which then applies round robin and sets the owner for lead that come in via Hubspot landing pages.</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>company removal</fullName>
+        <actions>
+            <name>company_removal</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Lead.Company</field>
+            <operation>contains</operation>
+            <value>[not provided]</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>lead_assign_AMainland</fullName>
+        <active>false</active>
+        <criteriaItems>
+            <field>Lead.HS_Lead_Owner__c</field>
+            <operation>equals</operation>
+            <value>005i0000008s9Vp</value>
+        </criteriaItems>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>lead_assign_AOdom</fullName>
+        <actions>
+            <name>lead_assign_aodo</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Lead.HS_Lead_Owner__c</field>
+            <operation>equals</operation>
+            <value>005i0000001r2rP</value>
+        </criteriaItems>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>lead_assign_AStumler</fullName>
+        <actions>
+            <name>lead_assign_astu</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Lead.HS_Lead_Owner__c</field>
+            <operation>equals</operation>
+            <value>005i0000001tWeu</value>
+        </criteriaItems>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>lead_assign_BLearst</fullName>
+        <active>false</active>
+        <criteriaItems>
+            <field>Lead.HS_Lead_Owner__c</field>
+            <operation>equals</operation>
+            <value>005i0000001tbvE</value>
+        </criteriaItems>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>lead_assign_BRoy</fullName>
+        <actions>
+            <name>lead_assign_broy</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Lead.HS_Lead_Owner__c</field>
+            <operation>equals</operation>
+            <value>005i0000008Waze</value>
+        </criteriaItems>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>lead_assign_BRuede</fullName>
+        <actions>
+            <name>lead_assign_brue</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Lead.HS_Lead_Owner__c</field>
+            <operation>equals</operation>
+            <value>005i0000001u1Qr</value>
+        </criteriaItems>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>lead_assign_CBaker</fullName>
+        <actions>
+            <name>lead_assign_cbak</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Lead.HS_Lead_Owner__c</field>
+            <operation>equals</operation>
+            <value>005i0000001tWfJ</value>
+        </criteriaItems>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>lead_assign_CHill</fullName>
+        <active>false</active>
+        <criteriaItems>
+            <field>Lead.HS_Lead_Owner__c</field>
+            <operation>equals</operation>
+            <value>0051Y0000090bCL</value>
+        </criteriaItems>
+        <description>lead assign for Charlotte Hill Exlcusive GP</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>lead_assign_DHiggins</fullName>
+        <actions>
+            <name>lead_assign_dhigg</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Lead.HS_Lead_Owner__c</field>
+            <operation>equals</operation>
+            <value>005i0000004vqw7</value>
+        </criteriaItems>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>lead_assign_DMerino</fullName>
+        <actions>
+            <name>lead_assign_dmeri</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Lead.HS_Lead_Owner__c</field>
+            <operation>equals</operation>
+            <value>005i0000005hjcK</value>
+        </criteriaItems>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>lead_assign_DOrman</fullName>
+        <actions>
+            <name>lead_assign_dorm</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Lead.HS_Lead_Owner__c</field>
+            <operation>equals</operation>
+            <value>005i0000002rZQy</value>
+        </criteriaItems>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>lead_assign_JDavison</fullName>
+        <active>false</active>
+        <criteriaItems>
+            <field>Lead.HS_Lead_Owner__c</field>
+            <operation>equals</operation>
+            <value>005i0000008XK17</value>
+        </criteriaItems>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>lead_assign_JJefferis</fullName>
+        <active>false</active>
+        <criteriaItems>
+            <field>Lead.HS_Lead_Owner__c</field>
+            <operation>equals</operation>
+            <value>005i0000001r82Z</value>
+        </criteriaItems>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>lead_assign_JKlonowski</fullName>
+        <active>false</active>
+        <criteriaItems>
+            <field>Lead.HS_Lead_Owner__c</field>
+            <operation>equals</operation>
+            <value>005i0000001tWfn</value>
+        </criteriaItems>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>lead_assign_JLangbein</fullName>
+        <active>false</active>
+        <criteriaItems>
+            <field>Lead.HS_Lead_Owner__c</field>
+            <operation>equals</operation>
+            <value>005i0000001tWfx</value>
+        </criteriaItems>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>lead_assign_JLowman</fullName>
+        <active>false</active>
+        <criteriaItems>
+            <field>Lead.HS_Lead_Owner__c</field>
+            <operation>equals</operation>
+            <value>005i0000001u3Kn</value>
+        </criteriaItems>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>lead_assign_JPatel</fullName>
+        <actions>
+            <name>lead_assign_jpat</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Lead.HS_Lead_Owner__c</field>
+            <operation>equals</operation>
+            <value>005i0000002rSG0</value>
+        </criteriaItems>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>lead_assign_JPerlik</fullName>
+        <active>false</active>
+        <criteriaItems>
+            <field>Lead.HS_Lead_Owner__c</field>
+            <operation>equals</operation>
+            <value>005i0000002sII6</value>
+        </criteriaItems>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>lead_assign_KKurek</fullName>
+        <active>false</active>
+        <criteriaItems>
+            <field>Lead.HS_Lead_Owner__c</field>
+            <operation>equals</operation>
+            <value>005i0000001tWgH</value>
+        </criteriaItems>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>lead_assign_KLankford</fullName>
+        <actions>
+            <name>lead_assign_klan</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Lead.HS_Lead_Owner__c</field>
+            <operation>equals</operation>
+            <value>005i0000001r846</value>
+        </criteriaItems>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>lead_assign_KLivingston</fullName>
+        <actions>
+            <name>lead_assign_kliv</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Lead.HS_Lead_Owner__c</field>
+            <operation>equals</operation>
+            <value>005i0000001tWgM</value>
+        </criteriaItems>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>lead_assign_KSchroeder</fullName>
+        <active>false</active>
+        <criteriaItems>
+            <field>Lead.HS_Lead_Owner__c</field>
+            <operation>equals</operation>
+            <value>005i0000001tWg7</value>
+        </criteriaItems>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>lead_assign_LHOsborne</fullName>
+        <actions>
+            <name>lead_assign_lho</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Lead.HS_Lead_Owner__c</field>
+            <operation>equals</operation>
+            <value>005i0000001tWgR</value>
+        </criteriaItems>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>lead_assign_MCullen</fullName>
+        <actions>
+            <name>lead_assign_mcull</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Lead.HS_Lead_Owner__c</field>
+            <operation>equals</operation>
+            <value>005i0000001r82A</value>
+        </criteriaItems>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>lead_assign_MMcCarthy</fullName>
+        <actions>
+            <name>lead_assign_MMcCarthy</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Lead.HS_Lead_Owner__c</field>
+            <operation>equals</operation>
+            <value>005i0000006KRxC</value>
+        </criteriaItems>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>lead_assign_MParker</fullName>
+        <actions>
+            <name>lead_assign_mpar</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Lead.HS_Lead_Owner__c</field>
+            <operation>equals</operation>
+            <value>005i0000002rO1f</value>
+        </criteriaItems>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>lead_assign_TStrittmatter</fullName>
+        <actions>
+            <name>lead_assign_TStrittmatter</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Lead.HS_Lead_Owner__c</field>
+            <operation>equals</operation>
+            <value>005i0000006KRxA</value>
+        </criteriaItems>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>lead_assign_dcurnock</fullName>
+        <active>false</active>
+        <criteriaItems>
+            <field>Lead.HS_Lead_Owner__c</field>
+            <operation>equals</operation>
+            <value>0051Y0000090bCV</value>
+        </criteriaItems>
+        <description>lead assign for Dominic Curnock Exlcusive GP</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>lead_assign_ddaniel</fullName>
+        <active>false</active>
+        <criteriaItems>
+            <field>Lead.HS_Lead_Owner__c</field>
+            <operation>equals</operation>
+            <value>0051Y00000906We</value>
+        </criteriaItems>
+        <description>lead assign for Dian Daniel</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>lead_assign_ebartley</fullName>
+        <active>false</active>
+        <criteriaItems>
+            <field>Lead.HS_Lead_Owner__c</field>
+            <operation>equals</operation>
+            <value>005i00000099SoO</value>
+        </criteriaItems>
+        <description>assigned Ellie Bartley Leads</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>lead_assign_hvirtue</fullName>
+        <active>false</active>
+        <criteriaItems>
+            <field>Lead.HS_Lead_Owner__c</field>
+            <operation>equals</operation>
+            <value>0051Y0000090bCa</value>
+        </criteriaItems>
+        <description>lead assign for Harley Virtue Exlcusive GP</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>lead_assign_hwignall</fullName>
+        <active>false</active>
+        <criteriaItems>
+            <field>Lead.HS_Lead_Owner__c</field>
+            <operation>equals</operation>
+            <value>0051Y0000090bCf</value>
+        </criteriaItems>
+        <description>lead assign for Harrison Wignall Exlcusive GP</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>lead_assign_pselwood</fullName>
+        <active>false</active>
+        <criteriaItems>
+            <field>Lead.HS_Lead_Owner__c</field>
+            <operation>equals</operation>
+            <value>0051Y0000090bC1</value>
+        </criteriaItems>
+        <description>lead assign for Phil Selwood Exlcusive GP</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>lead_assign_travellerinc</fullName>
+        <active>false</active>
+        <criteriaItems>
+            <field>Lead.HS_Lead_Owner__c</field>
+            <operation>equals</operation>
+            <value>0051Y0000090do7</value>
+        </criteriaItems>
+        <description>lead assign for The Traveller Inc</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>tag_lead_interest</fullName>
+        <active>false</active>
+        <description>Adds tag for event interested in</description>
+        <formula>ISCHANGED(COTA_Event_Interest__c) || ISCHANGED(DE_Event_Interest__c) ||
+ISCHANGED(GPE_Event_Interest__c)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>update latest event interest field</fullName>
+        <actions>
+            <name>field_update_latest_event_interest</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <formula>ISCHANGED( COTA_Event_Interest__c ) || 
+ISCHANGED( DE_Event_Interest__c ) ||
+ISCHANGED( GPE_Event_Interest__c ) ||
+ISCHANGED( HB_Event_Interest__c ) ||
+ISCHANGED( HC_Event_Interest__c ) ||
+ISCHANGED( MOTOE_Event_Interest__c ) ||
+ISCHANGED( NBA_Event_Interest__c ) ||
+ISCHANGED( PB_Event_Interest__c ) ||
+ISCHANGED( PROFOOTBALLHOF_Event_Interest__c ) ||
+ISCHANGED( QE_Event_Interest__c ) ||
+ISCHANGED( UFC_Event_Interest__c ) ||
+ISCHANGED( F1MX_Event_Interest__c ) ||
+ISCHANGED( USATSE_Event_Interest__c ) ||
+ISNEW()</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+</Workflow>

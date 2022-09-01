@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldUpdates>
+        <fullName>Update_Deposit_Request_Events</fullName>
+        <field>Deposit_Requested_Events__c</field>
+        <formula>IF(ISBLANK(Deposit_Requested_Events__c), Latest_Event_Interest__c,
+Latest_Event_Interest__c &amp; &apos;, &apos; &amp; Deposit_Requested_Events__c)</formula>
+        <name>Update Deposit Request Events</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>update_Event_Interests</fullName>
+        <description>-10/6/17 wk</description>
+        <field>Event_Interests__c</field>
+        <formula>IF(ISBLANK(Event_Interests__c), Event_Interest_Picklist_PB__r.Name ,Event_Interest_Picklist_PB__r.Name + &quot;, &quot; + PRIORVALUE(Event_Interests__c))</formula>
+        <name>update Contact Event Interests</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>update_Latest_Event_Interest</fullName>
+        <description>updates latest event interest based on event interest picklist</description>
+        <field>Latest_Event_Interest__c</field>
+        <formula>Event_Interest_Picklist_PB__r.Name</formula>
+        <name>update Contact Latest Event Interest</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <outboundMessages>
+        <fullName>Contacts_to_QNG</fullName>
+        <apiVersion>47.0</apiVersion>
+        <endpointUrl>https://qe360.quintevents.com/api/contacts?type=contact</endpointUrl>
+        <fields>AccountId</fields>
+        <fields>Email</fields>
+        <fields>Id</fields>
+        <fields>LastModifiedDate</fields>
+        <fields>OwnerId</fields>
+        <includeSessionId>false</includeSessionId>
+        <integrationUser>qescobar@quintevents.com</integrationUser>
+        <name>Contacts to QNG</name>
+        <protected>false</protected>
+        <useDeadLetterQueue>false</useDeadLetterQueue>
+    </outboundMessages>
+    <rules>
+        <fullName>Contact Latest Event Status</fullName>
+        <actions>
+            <name>Update_Deposit_Request_Events</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>(
+(ISNEW() &amp;&amp; LOWER(Latest_Event_Status__c) = &apos;deposit&apos;) ||
+(ISCHANGED(Latest_Event_Status__c) &amp;&amp; LOWER(Latest_Event_Status__c) = &apos;deposit&apos;)
+)
+||
+((ISCHANGED(Event_Interest_Picklist__c) || ISCHANGED(Latest_Event_Interest__c)) &amp;&amp; LOWER(Latest_Event_Status__c) = &apos;deposit&apos;)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Contacts to QNG</fullName>
+        <actions>
+            <name>Contacts_to_QNG</name>
+            <type>OutboundMessage</type>
+        </actions>
+        <active>true</active>
+        <description>Sends Outbounds Message to QNG for Contacts</description>
+        <formula>NOT($Setup.ByPass_Rules__c.Outbound_Messages__c)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update Contact Event Interests From Picklist</fullName>
+        <actions>
+            <name>update_Event_Interests</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>update_Latest_Event_Interest</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>updates the Latest and addends to Event Interests</description>
+        <formula>ISCHANGED(Event_Interest_Picklist_PB__c)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+</Workflow>

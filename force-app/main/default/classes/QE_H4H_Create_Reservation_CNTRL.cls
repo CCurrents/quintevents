@@ -1,0 +1,60 @@
+/**
+ * @File Name          : QE_H4H_Create_Reservation_CNTRL.cls
+ * @Description        : 
+ * @Author             : jagrawal@addonblue.com
+ * @Group              : 
+ * @Last Modified By   : jagrawal@addonblue.com
+ * @Last Modified On   : 5/11/2020, 6:05:35 AM
+ * @Modification Log   : 
+ * Ver       Date            Author      		    Modification
+ * 1.0    5/11/2020   jagrawal@addonblue.com     Initial Version
+**/
+public class QE_H4H_Create_Reservation_CNTRL{
+    /*public Id oppLineID;
+    public OpportunityLineItem oli;
+    public boolean displayPopup {get;set;}*/
+
+    public QE_H4H_Create_Reservation_CNTRL(ApexPages.StandardController stdController) {
+        // oppLineID = stdController.getId();
+        // displayPopup = true;
+        // List<OpportunityLineItem> olis = new List<OpportunityLineItem>([Select Id, Name, OpportunityId, H4H_Client_Name__c from OpportunityLineItem where Id = :oppLineID]);
+        // if(olis.size () > 0) { //&& String.isNotBlank(olis[0].H4H_Client_Name__c)
+        //     List<Rooming_List__c> roomList = new List<Rooming_List__c>([Select Id,Guest_Name__c from Rooming_List__c where Opportunity__c = :olis[0].OpportunityId and OpportunityLineItem_Id__c = :olis[0].Id]);
+        //     List<Opportunity_Payment_Terms__c> oppPayTerms = new List<Opportunity_Payment_Terms__c>([Select Id from Opportunity_Payment_Terms__c where Opportunity__c = :olis[0].OpportunityId AND Status__c = 'Passed']);
+        //     if(oppPayTerms.size() > 0 && roomList.size() > 0 && String.isNotBlank(roomList[0].Guest_Name__c)) {
+        //         displayPopup = false;
+        //         oli = olis[0];
+        //     }
+        // }
+        closePopup();
+        createReservationAndRedirect();
+    }
+
+    public pageReference closePopup() {
+       /* displayPopup = false;
+        pageReference ref = new pageReference('/' + oppLineID);
+        ref.setRedirect(true);
+        return ref;*/
+        return null;
+    }
+
+    public pageReference createReservationAndRedirect() {
+        pageReference pr = null;
+        
+        // if(!displayPopup) {
+        //     List<Opportunity> lstOpportunity = new List<Opportunity>([Select Id, CurrencyIsoCode, Primary_Contact__c, Primary_Contact__r.FirstName, Primary_Contact__r.LastName,
+        //                                                             Primary_Contact__r.Email, Primary_Contact__r.Phone, Primary_Contact__r.Country_Code__c,Event__c,Event__r.H4H_Site_Id__c,
+        //                                                             Primary_Contact__r.MailingStreet, Primary_Contact__r.MailingCity, Primary_Contact__r.MailingPostalCode, Primary_Contact__r.MailingCountryCode, Primary_Contact__r.MailingStateCode,
+        //                                                             // (Select Id, Status__c from Opportunity_Payment_Terms__r where Status__c = 'Passed' Order by LastModifiedDate desc Limit 1),
+        //                                                             (Select Id, Name, Hotel_Id__c,Check_In_Date__c,Check_Out_Date__c, Room_Type_Hotel__c, Quantity, H4H_Adult_Quantity__c,H4H_Need_to_Hold__c,
+        //                                                             H4H_Itinerary_Id__c, H4H_Reservation_Id__c,H4H_Hold_Created__c, H4H_RatePlan_Code__c, H4H_Reservation_Created__c, H4H_Room_Code__c, Roomtype_Id__c from OpportunityLineItems
+        //                                                             where Id = :oppLineID AND Check_In_Date__c != Null AND Check_Out_Date__c != Null AND Hotel_Id__c != NUll AND H4H_Hold_Created__c = true) //AND Product2.RecordType.DeveloperName = 'Hotels'
+        //                                                             from Opportunity where Id = :oli.OpportunityId]); //AND Product2.RecordType.DeveloperName = 'Hotels'
+                                                                    
+        //     QE_H4HHotelProcess.reservationCreateRequestCommon(lstOpportunity, true);
+        //     pr = closePopup();
+        // }
+        
+        return pr;
+    }
+}

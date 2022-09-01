@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldUpdates>
+        <fullName>Copy_Billing_City_to_Mailing_City</fullName>
+        <field>PersonMailingCity</field>
+        <formula>BillingCity</formula>
+        <name>Copy Billing City to Mailing City</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Copy_Billing_Country_To_Mailing_Country</fullName>
+        <field>PersonMailingCountry</field>
+        <formula>BillingCountry</formula>
+        <name>Copy Billing Country To Mailing Country</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Copy_Billing_State_to_Mailing_State</fullName>
+        <field>PersonMailingState</field>
+        <formula>BillingState</formula>
+        <name>Copy Billing State to Mailing State</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Copy_Billing_Street_to_Mailing_Street</fullName>
+        <field>PersonMailingStreet</field>
+        <formula>BillingStreet</formula>
+        <name>Copy Billing Street to Mailing Street</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Copy_Billing_Zip_Code_to_Mailing_Zip_Cod</fullName>
+        <field>PersonMailingPostalCode</field>
+        <formula>BillingPostalCode</formula>
+        <name>Copy Billing Zip Code to Mailing Zip Cod</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Set_to_Full_Phone</fullName>
+        <field>Phone</field>
+        <formula>Full_Phone__c</formula>
+        <name>Set to Full Phone</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Deposit_Request_Events</fullName>
+        <field>Deposit_Requested_Events__c</field>
+        <formula>IF(ISBLANK(Deposit_Requested_Events__c), Latest_Event_Interest__c,
+Latest_Event_Interest__c &amp; &apos;, &apos; &amp; Deposit_Requested_Events__c)</formula>
+        <name>Update Deposit Request Events</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Person_Deposit_Request_Events</fullName>
+        <field>Deposit_Requested_Events__pc</field>
+        <formula>IF(ISBLANK(Deposit_Requested_Events__pc), Latest_Event_Interest__pc,
+Latest_Event_Interest__pc &amp; &apos;, &apos; &amp; Deposit_Requested_Events__pc)</formula>
+        <name>Update Person Deposit Request Events</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>update_Account_Event_Interests</fullName>
+        <description>updates Account Event Interests with Picklist</description>
+        <field>Event_Interests__pc</field>
+        <formula>IF(ISBLANK(Event_Interests__pc), Event_Interest_Picklist__pr.Name,Event_Interest_Picklist__pr.Name + &quot;, &quot; + PRIORVALUE(Event_Interests__pc))</formula>
+        <name>update Account Event Interests</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>update_Account_Latest_Event_Interest</fullName>
+        <field>Latest_Event_Interest__c</field>
+        <formula>Event_Interest_Picklist_PB__r.Name</formula>
+        <name>update Account Latest Event Interest</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>update_Account_Latest_Event_Interest_P</fullName>
+        <field>Latest_Event_Interest__pc</field>
+        <formula>Event_Interest_Picklist_PB__pr.Name</formula>
+        <name>update Account Latest Event Interest(P)</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>update_Acct_Latest_Event_Int_with_Pickli</fullName>
+        <description>updates account latest event interest with picklist</description>
+        <field>Latest_Event_Interest__pc</field>
+        <formula>Event_Interest_Picklist__pr.Name</formula>
+        <name>update Acct Latest Event Int with Pickli</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>update_Event_Interest_with_Latest</fullName>
+        <field>Event_Interests__c</field>
+        <formula>IF(
+OR(
+ISNEW(),ISBLANK(Event_Interests__c)), Latest_Event_Interest__c,
+Latest_Event_Interest__c + &quot;, &quot; +PRIORVALUE(Event_Interests__c)
+)</formula>
+        <name>update Event Interest with Latest</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>update_Event_Interest_with_Latest_P</fullName>
+        <field>Event_Interests__pc</field>
+        <formula>IF(
+OR(
+ISNEW(),ISBLANK(Event_Interests__pc)), Latest_Event_Interest__pc,
+Latest_Event_Interest__pc + &quot;, &quot; +PRIORVALUE(Event_Interests__pc)
+)</formula>
+        <name>update Event Interest with Latest(P)</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>update_F1_Buyer_Count</fullName>
+        <description>updates field, F1 Buyer with F1 Buyer Roll Up field value (cannot use roll up in sharing rule)
+
+for Sharing Accounts that have F1 Buyers
+
+-8/17/18 WK</description>
+        <field>F1_Buyer__c</field>
+        <formula>F1_Buyer_Roll_Up__c</formula>
+        <name>update F1 Buyer Count</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <outboundMessages>
+        <fullName>Accounts_to_QNG</fullName>
+        <apiVersion>47.0</apiVersion>
+        <endpointUrl>https://qe360.quintevents.com/api/contacts?type=account</endpointUrl>
+        <fields>AUD_Total_Credit_Available__c</fields>
+        <fields>Allow_Online_Credit_Usage__c</fields>
+        <fields>CAD_Total_Credit_Available__c</fields>
+        <fields>EUR_Total_Credit_Available__c</fields>
+        <fields>GBP_Total_Credit_Available__c</fields>
+        <fields>Id</fields>
+        <fields>IsPersonAccount</fields>
+        <fields>LastModifiedDate</fields>
+        <fields>OwnerId</fields>
+        <fields>PersonEmail</fields>
+        <fields>USD_Total_Credit_Available__c</fields>
+        <includeSessionId>false</includeSessionId>
+        <integrationUser>qescobar@quintevents.com</integrationUser>
+        <name>Accounts to QNG</name>
+        <protected>false</protected>
+        <useDeadLetterQueue>false</useDeadLetterQueue>
+    </outboundMessages>
+    <rules>
+        <fullName>Account Latest Event Status</fullName>
+        <actions>
+            <name>Update_Deposit_Request_Events</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>(
+(ISNEW() &amp;&amp; LOWER(Latest_Event_Status__c) = &apos;deposit&apos;) ||
+(ISCHANGED(Latest_Event_Status__c) &amp;&amp; LOWER(Latest_Event_Status__c) = &apos;deposit&apos;)
+)
+||
+((ISCHANGED(Event_Interest_Picklist__c) || ISCHANGED(Latest_Event_Interest__c)) &amp;&amp; LOWER(Latest_Event_Status__c) = &apos;deposit&apos;)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Accounts to QNG</fullName>
+        <actions>
+            <name>Accounts_to_QNG</name>
+            <type>OutboundMessage</type>
+        </actions>
+        <active>true</active>
+        <description>Sends Outbounds Message to QNG for Account</description>
+        <formula>NOT($Setup.ByPass_Rules__c.Outbound_Messages__c)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>F1 Buyer Roll Up Count</fullName>
+        <actions>
+            <name>update_F1_Buyer_Count</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Account.F1_Buyer_Roll_Up__c</field>
+            <operation>notEqual</operation>
+            <value>0</value>
+        </criteriaItems>
+        <description>update the F1 Buyer field with F1 Buyer Roll Up Count for Account Sharing purposes
+
+i.e.  Share F1 Accounts with Charlotte Hill per MC
+
+-8/17/18</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Person Account Latest Event Status</fullName>
+        <actions>
+            <name>Update_Person_Deposit_Request_Events</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>(
+(ISNEW() &amp;&amp; LOWER(Latest_Event_Status__pc) = &apos;deposit&apos;) ||
+(ISCHANGED(Latest_Event_Status__pc) &amp;&amp; LOWER(Latest_Event_Status__pc) = &apos;deposit&apos;)
+)
+||
+((ISCHANGED(Event_Interest_Picklist__pc) || ISCHANGED(Latest_Event_Interest__pc)) &amp;&amp; LOWER(Latest_Event_Status__pc) = &apos;deposit&apos;)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Set Full Phone Account</fullName>
+        <actions>
+            <name>Set_to_Full_Phone</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>OR(AND(ISNEW(), NOT(ISBLANK(Full_Phone__c))), ISCHANGED(Full_Phone__c))</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update Account Event Interests based on Latest</fullName>
+        <actions>
+            <name>update_Event_Interest_with_Latest</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>update Account latest event interests based on Latest Event Interest</description>
+        <formula>OR(ISNEW(),ISCHANGED(Latest_Event_Interest__c))</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update Account Latest Event Interests</fullName>
+        <actions>
+            <name>update_Account_Latest_Event_Interest</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>update Account latest event interests based on Picklist</description>
+        <formula>AND(NOT(ISBLANK( Event_Interest_Picklist_PB__c )), OR(ISNEW(),ISCHANGED(Event_Interest_Picklist_PB__c)))</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update Person Account Event Interests based on Latest</fullName>
+        <actions>
+            <name>update_Event_Interest_with_Latest_P</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>update Person Account latest event interests based on Latest Event Interest</description>
+        <formula>OR(ISNEW(),ISCHANGED(Latest_Event_Interest__pc)) &amp;&amp;  IsPersonAccount = True</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update Person Account Latest Event Interests</fullName>
+        <actions>
+            <name>update_Account_Latest_Event_Interest_P</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>update Person Account latest event interests based on Picklist</description>
+        <formula>AND(NOT(ISBLANK(Event_Interest_Picklist_PB__pc)), OR(ISNEW(),ISCHANGED(Event_Interest_Picklist_PB__pc))) &amp;&amp;
+IsPersonAccount = true</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>update Person Account Event Interests</fullName>
+        <actions>
+            <name>update_Account_Event_Interests</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>update_Acct_Latest_Event_Int_with_Pickli</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>updates Person Account Event Interests based on Picklist</description>
+        <formula>ISCHANGED(Event_Interest_Picklist__pc)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+</Workflow>

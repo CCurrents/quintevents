@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assignments>
+        <name>pageNamesInOrder_Assignment</name>
+        <label>pageNamesInOrder_Assignment</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>pageNamesInOrder</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <stringValue>welcome_page</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>pageNamesInOrder</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <stringValue>p_6570751f_6a75_4af7_bf58_91310ea8b355</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>pageNamesInOrder</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <stringValue>thank_you_page</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>welcome_page</targetReference>
+        </connector>
+    </assignments>
+    <choices>
+        <name>c_1cefbf5b_e3f4_4126_add8_5515a37094d5</name>
+        <choiceText>Partial refund</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Partial refund</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>c_294341ec_f587_4559_ab4a_83f1df3a1a9a</name>
+        <choiceText>Sales rep reassignment</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Sales rep reassignment</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>c_6542067d_d1b4_469e_97b6_70816ac0bc97</name>
+        <choiceText>Complimentary tickets</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Complimentary tickets</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>c_8ecb84a4_109f_42ff_8239_4e7f9391b7ae</name>
+        <choiceText>Escalation to manager/director/VP</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Escalation to manager/director/VP</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>c_9e87b20b_3593_4fa5_8963_81f8d14e9120</name>
+        <choiceText>Full refund</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Full refund</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>c_d24a31a1_dd0a_4b91_85e3_0acc0396784b</name>
+        <choiceText>Future discount</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Future discount</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>c_e96fccc7_560e_4f00_a973_1c210dcb5bd5</name>
+        <choiceText>Complimentary upgrade</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Complimentary upgrade</stringValue>
+        </value>
+    </choices>
+    <interviewLabel>Complaint Intake</interviewLabel>
+    <label>Complaint Intake</label>
+    <processMetadataValues>
+        <name>advanceThankYouPageEnabled</name>
+        <value>
+            <booleanValue>false</booleanValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>autoProgressEnabled</name>
+        <value>
+            <booleanValue>false</booleanValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>hasWelcomePage</name>
+        <value>
+            <booleanValue>true</booleanValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>overrideActiveVersion</name>
+        <value>
+            <booleanValue>false</booleanValue>
+        </value>
+    </processMetadataValues>
+    <processType>Survey</processType>
+    <screens>
+        <name>p_6570751f_6a75_4af7_bf58_91310ea8b355</name>
+        <label>Page 1</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <fields>
+            <processMetadataValues>
+                <name>autoProgressAction</name>
+                <value>
+                    <stringValue>NONE</stringValue>
+                </value>
+            </processMetadataValues>
+            <name>q_ee91e5f8_b659_4b9d_a765_ceaeb5702f48</name>
+            <dataType>String</dataType>
+            <fieldText>&lt;p&gt;&lt;b&gt;Client Comments&lt;/b&gt;&lt;/p&gt;</fieldText>
+            <fieldType>InputField</fieldType>
+            <helpText>Please provide the exact client comments or complaint that initiated the complaint process.
+
+If the complaint was received in a written format, please copy/paste EXACTLY what the client wrote.
+If received via physical conversation or phone call, please summarize the conversation as best possible.</helpText>
+            <isRequired>false</isRequired>
+        </fields>
+        <fields>
+            <processMetadataValues>
+                <name>autoProgressAction</name>
+                <value>
+                    <stringValue>NONE</stringValue>
+                </value>
+            </processMetadataValues>
+            <name>q_9885fd7f_c695_4dd2_95cf_588637c2dec2</name>
+            <dataType>String</dataType>
+            <fieldText>&lt;p&gt;&lt;strong&gt;Summarize (Internal)&lt;/strong&gt;&lt;/p&gt;</fieldText>
+            <fieldType>InputField</fieldType>
+            <helpText>Please describe the issue from your or QuintEvent&apos;s point of view. Provide the facts around any research you may have done or details not noted in the client comments.</helpText>
+            <isRequired>false</isRequired>
+        </fields>
+        <fields>
+            <processMetadataValues>
+                <name>autoProgressAction</name>
+                <value>
+                    <stringValue>NONE</stringValue>
+                </value>
+            </processMetadataValues>
+            <name>q_9a4ff2f2_d44f_4db6_bd4b_fe4a6b1ea774</name>
+            <dataType>String</dataType>
+            <fieldText>&lt;p&gt;&lt;strong&gt;Account Info&lt;/strong&gt;&lt;/p&gt;</fieldText>
+            <fieldType>InputField</fieldType>
+            <helpText>Provide Salesforce order link.</helpText>
+            <isRequired>false</isRequired>
+        </fields>
+        <fields>
+            <processMetadataValues>
+                <name>autoProgressAction</name>
+                <value>
+                    <stringValue>NONE</stringValue>
+                </value>
+            </processMetadataValues>
+            <name>q_7a59d47f_dc73_4ac3_b130_665111563e5f</name>
+            <choiceReferences>c_9e87b20b_3593_4fa5_8963_81f8d14e9120</choiceReferences>
+            <choiceReferences>c_1cefbf5b_e3f4_4126_add8_5515a37094d5</choiceReferences>
+            <choiceReferences>c_d24a31a1_dd0a_4b91_85e3_0acc0396784b</choiceReferences>
+            <choiceReferences>c_294341ec_f587_4559_ab4a_83f1df3a1a9a</choiceReferences>
+            <choiceReferences>c_8ecb84a4_109f_42ff_8239_4e7f9391b7ae</choiceReferences>
+            <choiceReferences>c_6542067d_d1b4_469e_97b6_70816ac0bc97</choiceReferences>
+            <choiceReferences>c_e96fccc7_560e_4f00_a973_1c210dcb5bd5</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>&lt;p&gt;&lt;strong&gt;Client Requests&lt;/strong&gt;&lt;/p&gt;</fieldText>
+            <fieldType>MultiSelectCheckboxes</fieldType>
+            <helpText>Please check all items that the CLIENT has requested directly.
+Do not tick items that you believe should be actioned.</helpText>
+            <isRequired>false</isRequired>
+        </fields>
+        <fields>
+            <processMetadataValues>
+                <name>autoProgressAction</name>
+                <value>
+                    <stringValue>NONE</stringValue>
+                </value>
+            </processMetadataValues>
+            <name>q_91241d18_a853_4d32_94cd_f384f0b96eb9</name>
+            <dataType>String</dataType>
+            <fieldText>&lt;p&gt;&lt;strong&gt;Actions&lt;/strong&gt;&lt;/p&gt;</fieldText>
+            <fieldType>InputField</fieldType>
+            <helpText>Detail any actions you have already taken for this complaint.</helpText>
+            <isRequired>false</isRequired>
+        </fields>
+        <pausedText>To pick up where you left off, refresh this page, or open the survey again.</pausedText>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>welcome_page</name>
+        <label>Welcome Page</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>p_6570751f_6a75_4af7_bf58_91310ea8b355</targetReference>
+        </connector>
+        <fields>
+            <name>welcome_question</name>
+            <extensionName>survey:runtimeWelcome</extensionName>
+            <fieldType>ComponentInstance</fieldType>
+            <inputParameters>
+                <name>label</name>
+                <value>
+                    <stringValue>{!welcome_question_lref_tt}</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>description</name>
+                <value>
+                    <stringValue>{!welcome_question_dref_tt}</stringValue>
+                </value>
+            </inputParameters>
+            <isRequired>true</isRequired>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <startElementReference>pageNamesInOrder_Assignment</startElementReference>
+    <status>Active</status>
+    <textTemplates>
+        <name>thankYouDescriptionTextTemplate</name>
+        <isViewedAsPlainText>false</isViewedAsPlainText>
+        <text></text>
+    </textTemplates>
+    <textTemplates>
+        <name>thankYouLabelTextTemplate</name>
+        <isViewedAsPlainText>false</isViewedAsPlainText>
+        <text>&lt;p&gt;&lt;strong&gt;Thanks! No refunds.&lt;/strong&gt;&lt;/p&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>welcome_question_dref_tt</name>
+        <isViewedAsPlainText>false</isViewedAsPlainText>
+        <text>Please use this survey to submit formal complaints from clients regarding an on or off-site issue. 
+ONLY use this form if you are reporting a client complaint surrounding a legitimate issue.
+
+Please do NOT use this form to submit minor issues of dissatisfaction or general comments.
+If you are uncertain if you should be filling out this form, you most likely should not.</text>
+    </textTemplates>
+    <textTemplates>
+        <name>welcome_question_lref_tt</name>
+        <isViewedAsPlainText>false</isViewedAsPlainText>
+        <text>&lt;p&gt;&lt;strong&gt;All Event Complain Intake Form&lt;/strong&gt;&lt;/p&gt;</text>
+    </textTemplates>
+    <variables>
+        <name>guestUserLang</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <name>invitationId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <value>
+            <stringValue></stringValue>
+        </value>
+    </variables>
+    <variables>
+        <name>pageNamesInOrder</name>
+        <dataType>String</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <name>previewMode</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <value>
+            <booleanValue>false</booleanValue>
+        </value>
+    </variables>
+    <variables>
+        <name>thankYouDescription</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <value>
+            <stringValue>{!thankYouDescriptionTextTemplate}</stringValue>
+        </value>
+    </variables>
+    <variables>
+        <name>thankYouLabel</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <value>
+            <stringValue>{!thankYouLabelTextTemplate}</stringValue>
+        </value>
+    </variables>
+</Flow>

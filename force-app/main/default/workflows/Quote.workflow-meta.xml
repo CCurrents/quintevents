@@ -1,0 +1,598 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>QE_Quote_Draft_Approved_To_Operations</fullName>
+        <description>QE_Quote_Draft_Approved_To_Operations</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>Operations_Team</recipient>
+            <type>group</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>QE_Email_Template/QE_Quote_Draft_Approved_To_Operations</template>
+    </alerts>
+    <alerts>
+        <fullName>QE_Quote_Draft_Approved_To_Sales</fullName>
+        <description>QE_Quote_Draft_Approved_To_Sales</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>bruede@quintevents.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>ddaniel@quintevents.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>dhiggins@quintevents.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>QE_Email_Template/QE_Quote_Draft_Approved_To_Sales</template>
+    </alerts>
+    <alerts>
+        <fullName>QE_Quote_Draft_Approved_To_SalesRep</fullName>
+        <description>QE_Quote_Draft_Approved_To_SalesRep</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>QE_Email_Template/QE_Quote_Draft_Approved_To_SalesRep</template>
+    </alerts>
+    <alerts>
+        <fullName>QE_Quote_Draft_Denied_To_Operations</fullName>
+        <description>QE_Quote_Draft_Denied_To_Operations</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>Operations_Team</recipient>
+            <type>group</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>QE_Email_Template/QE_Quote_Draft_Denied_To_Operations</template>
+    </alerts>
+    <alerts>
+        <fullName>QE_Quote_Draft_Denied_To_Sales</fullName>
+        <description>QE_Quote_Draft_Denied_To_Sales</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>bruede@quintevents.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>ddaniel@quintevents.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>dhiggins@quintevents.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>QE_Email_Template/QE_Quote_Draft_Denied_To_Sales</template>
+    </alerts>
+    <alerts>
+        <fullName>QE_Quote_Draft_Denied_To_SalesRep</fullName>
+        <description>QE_Quote_Draft_Denied_To_SalesRep</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>QE_Email_Template/QE_Quote_Draft_Denied_To_SalesRep</template>
+    </alerts>
+    <alerts>
+        <fullName>QE_Quote_Draft_Needs_Review_To_SalesRep</fullName>
+        <description>QE_Quote_Draft_Needs_Review_To_SalesRep</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>QE_Email_Template/QE_Quote_Draft_Needs_Review_To_SalesRep</template>
+    </alerts>
+    <alerts>
+        <fullName>QE_Quote_Signed_Approved_To_Operations</fullName>
+        <description>QE_Quote_Signed_Approved_To_Operations</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>Operations_Team</recipient>
+            <type>group</type>
+        </recipients>
+        <recipients>
+            <recipient>accounting@quintevents.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/QE_Quote_Signed_Approved_To_Ops_VF</template>
+    </alerts>
+    <alerts>
+        <fullName>QE_Quote_Signed_Approved_To_SalesRep</fullName>
+        <description>QE_Quote_Signed_Approved_To_SalesRep</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/QE_Quote_Signed_Approved_To_SalesRep_VF</template>
+    </alerts>
+    <alerts>
+        <fullName>QE_Quote_Signed_Denied_To_Operations</fullName>
+        <description>QE_Quote_Signed_Denied_To_Operations</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>Operations_Team</recipient>
+            <type>group</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>QE_Email_Template/QE_Quote_Signed_Denied_To_Operations</template>
+    </alerts>
+    <alerts>
+        <fullName>QE_Quote_Signed_Denied_To_SalesRep</fullName>
+        <description>QE_Quote_Signed_Denied_To_SalesRep</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>QE_Email_Template/QE_Quote_Signed_Denied_To_SalesRep</template>
+    </alerts>
+    <alerts>
+        <fullName>QE_Quote_Signed_Needs_Review_To_SalesRep</fullName>
+        <description>QE_Quote_Signed_Needs_Review_To_SalesRep</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>QE_Email_Template/QE_Quote_Signed_Needs_Review_To_SalesRep</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Approval_Draft_Status</fullName>
+        <field>Approval_Process_Status__c</field>
+        <literalValue>Pending</literalValue>
+        <name>Approval Draft Status</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Approval_Quote_Status</fullName>
+        <description>updates Quote: Status, not Quote: Approval Process Status</description>
+        <field>Status</field>
+        <literalValue>Draft - Needs Review</literalValue>
+        <name>Approval Quote Status WK</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Approval_Signed_Status</fullName>
+        <field>Approval_Process_Status__c</field>
+        <literalValue>Pending</literalValue>
+        <name>Approval Signed Status</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Approval_Status_Draft_Approved</fullName>
+        <field>Approval_Process_Status__c</field>
+        <literalValue>Approved</literalValue>
+        <name>Approval Status Draft Approved</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Approval_Status_Draft_Reject</fullName>
+        <field>Approval_Process_Status__c</field>
+        <literalValue>Rejected</literalValue>
+        <name>Approval Status Draft Reject</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Approval_Status_Signed_Approved</fullName>
+        <field>Approval_Process_Status__c</field>
+        <literalValue>Approved</literalValue>
+        <name>Approval Status Signed Approved</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Approval_Status_Signed_Reject</fullName>
+        <field>Approval_Process_Status__c</field>
+        <literalValue>Rejected</literalValue>
+        <name>Approval Status Signed Reject</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Draft_Approval_Request_Date_Time</fullName>
+        <field>Draft_Approval_Request_Date_Time__c</field>
+        <formula>NOW()</formula>
+        <name>Draft Approval Request Date/Time</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Draft_Approval_Request_Hour</fullName>
+        <field>Draft_Approval_Request_Hour__c</field>
+        <formula>VALUE( MID( TEXT( NOW() ), 12, 2 ) ) - 5</formula>
+        <name>Draft Approval Request Hour</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Draft_Approval_Request_Minute</fullName>
+        <field>Draft_Approval_Request_Minute__c</field>
+        <formula>VALUE( MID( TEXT( NOW() ), 15, 2 ) )</formula>
+        <name>Draft Approval Request Minute</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Draft_Approved_Denied_Awaiting_Approval</fullName>
+        <field>Awaiting_Approval_From__c</field>
+        <name>Draft Approved/Denied Awaiting Approval</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Null</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Draft_Approved_Hour_Update</fullName>
+        <field>Draft_Approved_Hour__c</field>
+        <formula>VALUE( MID( TEXT( NOW() ), 12, 2 ) ) - 5</formula>
+        <name>Draft Approved Hour Update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Draft_Approved_Minute_Update</fullName>
+        <description>-10/4/17 wk draft approved minute</description>
+        <field>Draft_Approved_Minute__c</field>
+        <formula>VALUE( MID( TEXT( NOW() ), 15, 2 ) )</formula>
+        <name>Draft Approved Minute Update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Draft_Awaiting_Approval_From</fullName>
+        <description>Sets value for &quot;Awaiting Approval From&quot; field on quote once approval process starts.</description>
+        <field>Awaiting_Approval_From__c</field>
+        <formula>IF( 
+Draft_Reasons_For_Review_H4H__c != &apos;&apos;, 
+&quot;H4H&quot;, 
+IF(AND(Owner:User.UserRole.Name = &apos;Exclusive GP&apos; ,Draft_Reasons_For_Review_Sales__c != &apos;&apos;), 
+&quot;Exclusive GP&quot;, 
+IF(AND(Owner:User.UserRole.Name != &apos;Exclusive GP&apos; ,Draft_Reasons_For_Review_Sales__c != &apos;&apos;), 
+&quot;Sales&quot;, 
+IF(Draft_Reasons_For_Review_Operations__c != &apos;&apos;, 
+&quot;Operations&quot;, 
+IF(Draft_Reasons_For_Review_Corporate_Sales__c != &apos;&apos;, 
+&quot;Corporate Sales&quot;, 
+&quot;&quot;) 
+) 
+) 
+) 
+)</formula>
+        <name>Draft Awaiting Approval From</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Draft_Awaiting_Approval_From_H4H</fullName>
+        <field>Awaiting_Approval_From__c</field>
+        <formula>if(AND(Owner:User.UserRole.Name != &apos;Exclusive GP&apos; ,Draft_Reasons_For_Review_Sales__c != &apos;&apos;), 
+&quot;Sales&quot;, 
+if(AND(Owner:User.UserRole.Name = &apos;Exclusive GP&apos; ,Draft_Reasons_For_Review_Sales__c != &apos;&apos;), 
+&quot;Exclusive GP&quot;, 
+if(Draft_Reasons_For_Review_Operations__c != &apos;&apos;, 
+&quot;Operations&quot;, 
+if(Draft_Reasons_For_Review_Corporate_Sales__c != &apos;&apos;, 
+&quot;Corporate Sales&quot;, 
+&quot;&quot;) 
+) 
+) 
+)</formula>
+        <name>Draft Awaiting Approval From H4H</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Draft_Corporate_Sales_Awaiting_Approval</fullName>
+        <field>Awaiting_Approval_From__c</field>
+        <formula>if(Draft_Reasons_For_Review_Corporate_Sales__c != null, 
+&quot;Corporate Sales&quot;, 
+&quot;&quot;)</formula>
+        <name>Draft Corporate Sales Awaiting Approval</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Draft_Quote_Event_Awaiting_Approval</fullName>
+        <description>Update Field Awaiting approval form with Super Car Tour Group when approvers approve process</description>
+        <field>Awaiting_Approval_From__c</field>
+        <formula>if(Draft_Reasons_For_Review_Accounting__c != null,
+&quot;Accounting&quot;,
+&quot;&quot;)</formula>
+        <name>Draft Quote Event Awaiting Approval</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Draft_Status_Update_Approved</fullName>
+        <field>Status</field>
+        <literalValue>Draft - Approved</literalValue>
+        <name>Draft Status Update Approved</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Draft_Status_Update_Denied</fullName>
+        <field>Status</field>
+        <literalValue>Draft - Denied</literalValue>
+        <name>Draft Status Update Denied</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Draft_Step_Ops_Approver_Name</fullName>
+        <field>Draft_Approver_Name_Operations__c</field>
+        <formula>$User.FirstName &amp; &quot; &quot; &amp; $User.LastName</formula>
+        <name>Draft Step Ops - Approver Name</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Draft_Step_Sales_Approver_Name</fullName>
+        <field>Draft_Approver_Name_Sales__c</field>
+        <formula>$User.FirstName &amp; &quot; &quot; &amp; $User.LastName</formula>
+        <name>Draft Step Sales - Approver Name</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Draft_Step_Sales_Awaiting_Approval_From</fullName>
+        <description>Sets value for &quot;Awaiting Approval From&quot; field on quote once record is approved by Sales (Step 1).</description>
+        <field>Awaiting_Approval_From__c</field>
+        <formula>if(Draft_Reasons_For_Review_Operations__c != null, 
+&quot;Operations&quot;, 
+&quot;&quot;)</formula>
+        <name>Draft Step Sales Awaiting Approval From</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>QE_Quote_Approver_Name</fullName>
+        <field>Approver_Name__c</field>
+        <formula>$User.FirstName &amp; &quot; &quot; &amp; $User.LastName</formula>
+        <name>QE_Quote_Approver_Name</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Send_Payment_Email_False</fullName>
+        <field>Send_Payment_Email__c</field>
+        <literalValue>0</literalValue>
+        <name>Send Payment Email False</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Send_Payment_Email_True</fullName>
+        <field>Send_Payment_Email__c</field>
+        <literalValue>1</literalValue>
+        <name>Send Payment Email True</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Signed_Approved_Denied_Awaiting_Approval</fullName>
+        <description>Setting it to blank so that it does not show old value</description>
+        <field>Awaiting_Approval_From__c</field>
+        <name>Signed Approved/Denied Awaiting Approval</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Null</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Signed_Awaiting_Approval</fullName>
+        <description>Sets value for &quot;Awaiting Approval From&quot; field on quote once approval process for signed quote starts.</description>
+        <field>Awaiting_Approval_From__c</field>
+        <formula>IF( 
+Signed_Reasons_For_Review_Operations__c != null, 
+&quot;Operations&quot;, 
+if(Signed_Reasons_For_Review_Sales__c != null, 
+&quot;Sales&quot;, 
+&quot;&quot;) 
+)</formula>
+        <name>Signed Awaiting Approval</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Signed_Awaiting_Approval_Form</fullName>
+        <field>Awaiting_Approval_From__c</field>
+        <formula>IF(
+Signed_Reasons_For_Review_H4H__c != null,
+&quot;H4H&quot;,
+&quot;Operations&quot;
+)</formula>
+        <name>Signed Awaiting Approval Form</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Signed_Awaiting_Approval_Form_After_H4H</fullName>
+        <field>Awaiting_Approval_From__c</field>
+        <formula>&quot;Operations&quot;</formula>
+        <name>Signed Awaiting Approval Form After H4H</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Signed_Status_Update_Approved</fullName>
+        <field>Status</field>
+        <literalValue>Signed - Approved</literalValue>
+        <name>Signed Status Update Approved</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Signed_Status_Update_Denied</fullName>
+        <field>Status</field>
+        <literalValue>Signed - Denied</literalValue>
+        <name>Signed Status Update Denied</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Signed_Step_Ops_Approver_Name</fullName>
+        <field>Signed_Approver_Name_Operations__c</field>
+        <formula>$User.FirstName &amp; &quot; &quot; &amp; $User.LastName</formula>
+        <name>Signed Step Ops - Approver Name</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Signed_Step_Ops_Awaiting_Approval</fullName>
+        <description>Sets value for &quot;Awaiting Approval From&quot; field on quote once record is approved by Operations (Step 1).</description>
+        <field>Awaiting_Approval_From__c</field>
+        <formula>If(Signed_Reasons_For_Review_Sales__c != null, 
+&quot;Sales&quot;, 
+&quot;&quot;)</formula>
+        <name>Signed Step Ops - Awaiting Approval</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Signed_Step_Sales_Approver_Name</fullName>
+        <field>Signed_Approver_Name_Sales__c</field>
+        <formula>$User.FirstName &amp; &quot; &quot; &amp; $User.LastName</formula>
+        <name>Signed Step Sales - Approver Name</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Quote_TimeStamp</fullName>
+        <field>Timestamp__c</field>
+        <formula>TEXT(NOW())</formula>
+        <name>Update Quote TimeStamp</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Trigger_15_field</fullName>
+        <field>Trigger_Time_15__c</field>
+        <formula>Now() - (0.02073)</formula>
+        <name>Update Trigger 15 field</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>Contracts%2FQuotes Denied FW</fullName>
+        <active>false</active>
+        <criteriaItems>
+            <field>Quote.Status</field>
+            <operation>equals</operation>
+            <value>Draft - Denied,Signed - Denied,Returned to Inventory</value>
+        </criteriaItems>
+        <description>Forwarding of contracts and quotes denied to Vicky</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Payment Method Credit Card</fullName>
+        <actions>
+            <name>Send_Payment_Email_True</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Quote.Payment_Method__c</field>
+            <operation>equals</operation>
+            <value>Credit Card</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Payment Method Non Credit Card</fullName>
+        <actions>
+            <name>Send_Payment_Email_False</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Quote.Payment_Method__c</field>
+            <operation>notEqual</operation>
+            <value>Credit Card</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+</Workflow>
