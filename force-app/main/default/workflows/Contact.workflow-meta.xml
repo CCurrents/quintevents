@@ -55,12 +55,7 @@ Latest_Event_Interest__c &amp; &apos;, &apos; &amp; Deposit_Requested_Events__c)
             <type>FieldUpdate</type>
         </actions>
         <active>false</active>
-        <formula>(
-(ISNEW() &amp;&amp; LOWER(Latest_Event_Status__c) = &apos;deposit&apos;) ||
-(ISCHANGED(Latest_Event_Status__c) &amp;&amp; LOWER(Latest_Event_Status__c) = &apos;deposit&apos;)
-)
-||
-((ISCHANGED(Event_Interest_Picklist__c) || ISCHANGED(Latest_Event_Interest__c)) &amp;&amp; LOWER(Latest_Event_Status__c) = &apos;deposit&apos;)</formula>
+        <formula>( (ISNEW() &amp;&amp; LOWER(Latest_Event_Status__c) = &apos;deposit&apos;) || (ISCHANGED(Latest_Event_Status__c) &amp;&amp; LOWER(Latest_Event_Status__c) = &apos;deposit&apos;) ) || ((ISCHANGED(Event_Interest_Picklist__c) || ISCHANGED(Latest_Event_Interest__c)) &amp;&amp; LOWER(Latest_Event_Status__c) = &apos;deposit&apos;)</formula>
         <triggerType>onAllChanges</triggerType>
     </rules>
     <rules>

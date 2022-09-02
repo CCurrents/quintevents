@@ -195,12 +195,7 @@ for Sharing Accounts that have F1 Buyers
             <type>FieldUpdate</type>
         </actions>
         <active>false</active>
-        <formula>(
-(ISNEW() &amp;&amp; LOWER(Latest_Event_Status__c) = &apos;deposit&apos;) ||
-(ISCHANGED(Latest_Event_Status__c) &amp;&amp; LOWER(Latest_Event_Status__c) = &apos;deposit&apos;)
-)
-||
-((ISCHANGED(Event_Interest_Picklist__c) || ISCHANGED(Latest_Event_Interest__c)) &amp;&amp; LOWER(Latest_Event_Status__c) = &apos;deposit&apos;)</formula>
+        <formula>( (ISNEW() &amp;&amp; LOWER(Latest_Event_Status__c) = &apos;deposit&apos;) || (ISCHANGED(Latest_Event_Status__c) &amp;&amp; LOWER(Latest_Event_Status__c) = &apos;deposit&apos;) ) || ((ISCHANGED(Event_Interest_Picklist__c) || ISCHANGED(Latest_Event_Interest__c)) &amp;&amp; LOWER(Latest_Event_Status__c) = &apos;deposit&apos;)</formula>
         <triggerType>onAllChanges</triggerType>
     </rules>
     <rules>
@@ -240,12 +235,7 @@ i.e.  Share F1 Accounts with Charlotte Hill per MC
             <type>FieldUpdate</type>
         </actions>
         <active>false</active>
-        <formula>(
-(ISNEW() &amp;&amp; LOWER(Latest_Event_Status__pc) = &apos;deposit&apos;) ||
-(ISCHANGED(Latest_Event_Status__pc) &amp;&amp; LOWER(Latest_Event_Status__pc) = &apos;deposit&apos;)
-)
-||
-((ISCHANGED(Event_Interest_Picklist__pc) || ISCHANGED(Latest_Event_Interest__pc)) &amp;&amp; LOWER(Latest_Event_Status__pc) = &apos;deposit&apos;)</formula>
+        <formula>( (ISNEW() &amp;&amp; LOWER(Latest_Event_Status__pc) = &apos;deposit&apos;) || (ISCHANGED(Latest_Event_Status__pc) &amp;&amp; LOWER(Latest_Event_Status__pc) = &apos;deposit&apos;) ) || ((ISCHANGED(Event_Interest_Picklist__pc) || ISCHANGED(Latest_Event_Interest__pc)) &amp;&amp; LOWER(Latest_Event_Status__pc) = &apos;deposit&apos;)</formula>
         <triggerType>onAllChanges</triggerType>
     </rules>
     <rules>
@@ -299,8 +289,7 @@ i.e.  Share F1 Accounts with Charlotte Hill per MC
         </actions>
         <active>false</active>
         <description>update Person Account latest event interests based on Picklist</description>
-        <formula>AND(NOT(ISBLANK(Event_Interest_Picklist_PB__pc)), OR(ISNEW(),ISCHANGED(Event_Interest_Picklist_PB__pc))) &amp;&amp;
-IsPersonAccount = true</formula>
+        <formula>AND(NOT(ISBLANK(Event_Interest_Picklist_PB__pc)), OR(ISNEW(),ISCHANGED(Event_Interest_Picklist_PB__pc))) &amp;&amp; IsPersonAccount = true</formula>
         <triggerType>onAllChanges</triggerType>
     </rules>
     <rules>

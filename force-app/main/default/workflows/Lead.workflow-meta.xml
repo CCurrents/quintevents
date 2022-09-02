@@ -410,12 +410,7 @@ Latest_Event_Interest__c + &quot;, &quot; +PRIORVALUE(Event_Interests__c)
             <type>FieldUpdate</type>
         </actions>
         <active>false</active>
-        <formula>(
-(ISNEW() &amp;&amp; LOWER(Latest_Event_Status__c) = &apos;deposit&apos;) ||
-(ISCHANGED(Latest_Event_Status__c) &amp;&amp; LOWER(Latest_Event_Status__c) = &apos;deposit&apos;)
-)
-||
-((ISCHANGED(Event_Interest_Picklist__c) || ISCHANGED(Latest_Event_Interest__c)) &amp;&amp; LOWER(Latest_Event_Status__c) = &apos;deposit&apos;)</formula>
+        <formula>( (ISNEW() &amp;&amp; LOWER(Latest_Event_Status__c) = &apos;deposit&apos;) || (ISCHANGED(Latest_Event_Status__c) &amp;&amp; LOWER(Latest_Event_Status__c) = &apos;deposit&apos;) ) || ((ISCHANGED(Event_Interest_Picklist__c) || ISCHANGED(Latest_Event_Interest__c)) &amp;&amp; LOWER(Latest_Event_Status__c) = &apos;deposit&apos;)</formula>
         <triggerType>onAllChanges</triggerType>
     </rules>
     <rules>
@@ -497,20 +492,14 @@ Latest_Event_Interest__c + &quot;, &quot; +PRIORVALUE(Event_Interests__c)
         </actions>
         <active>false</active>
         <description>To capture time stamp since the lead status is changed from OPEN to Any value for first time.</description>
-        <formula>AND( 
-TEXT(PRIORVALUE(Status)) = &quot;OPEN&quot;, 
-ISCHANGED(Status), ISBLANK( Time_Stamp_Since_First_Status_Change__c ) 
-)</formula>
+        <formula>AND(  TEXT(PRIORVALUE(Status)) = &quot;OPEN&quot;,  ISCHANGED(Status), ISBLANK( Time_Stamp_Since_First_Status_Change__c )  )</formula>
         <triggerType>onAllChanges</triggerType>
     </rules>
     <rules>
         <fullName>Update Event Interest Picklist</fullName>
         <active>false</active>
         <description>Update Event Interest Picklist	from QNG Event Interest Picklist</description>
-        <formula>(ISNEW() &amp;&amp; NOT(ISBLANK(QNGEventInterestPicklist__c))) 
-||
-(ISCHANGED(QNGEventInterestPicklist__c) &amp;&amp; 
-NOT(ISBLANK(QNGEventInterestPicklist__c)))</formula>
+        <formula>(ISNEW() &amp;&amp; NOT(ISBLANK(QNGEventInterestPicklist__c)))  || (ISCHANGED(QNGEventInterestPicklist__c) &amp;&amp;  NOT(ISBLANK(QNGEventInterestPicklist__c)))</formula>
         <triggerType>onAllChanges</triggerType>
     </rules>
     <rules>
@@ -997,8 +986,7 @@ NOT(ISBLANK(QNGEventInterestPicklist__c)))</formula>
         <fullName>tag_lead_interest</fullName>
         <active>false</active>
         <description>Adds tag for event interested in</description>
-        <formula>ISCHANGED(COTA_Event_Interest__c) || ISCHANGED(DE_Event_Interest__c) ||
-ISCHANGED(GPE_Event_Interest__c)</formula>
+        <formula>ISCHANGED(COTA_Event_Interest__c) || ISCHANGED(DE_Event_Interest__c) || ISCHANGED(GPE_Event_Interest__c)</formula>
         <triggerType>onAllChanges</triggerType>
     </rules>
     <rules>
@@ -1008,20 +996,7 @@ ISCHANGED(GPE_Event_Interest__c)</formula>
             <type>FieldUpdate</type>
         </actions>
         <active>false</active>
-        <formula>ISCHANGED( COTA_Event_Interest__c ) || 
-ISCHANGED( DE_Event_Interest__c ) ||
-ISCHANGED( GPE_Event_Interest__c ) ||
-ISCHANGED( HB_Event_Interest__c ) ||
-ISCHANGED( HC_Event_Interest__c ) ||
-ISCHANGED( MOTOE_Event_Interest__c ) ||
-ISCHANGED( NBA_Event_Interest__c ) ||
-ISCHANGED( PB_Event_Interest__c ) ||
-ISCHANGED( PROFOOTBALLHOF_Event_Interest__c ) ||
-ISCHANGED( QE_Event_Interest__c ) ||
-ISCHANGED( UFC_Event_Interest__c ) ||
-ISCHANGED( F1MX_Event_Interest__c ) ||
-ISCHANGED( USATSE_Event_Interest__c ) ||
-ISNEW()</formula>
+        <formula>ISCHANGED( COTA_Event_Interest__c ) ||  ISCHANGED( DE_Event_Interest__c ) || ISCHANGED( GPE_Event_Interest__c ) || ISCHANGED( HB_Event_Interest__c ) || ISCHANGED( HC_Event_Interest__c ) || ISCHANGED( MOTOE_Event_Interest__c ) || ISCHANGED( NBA_Event_Interest__c ) || ISCHANGED( PB_Event_Interest__c ) || ISCHANGED( PROFOOTBALLHOF_Event_Interest__c ) || ISCHANGED( QE_Event_Interest__c ) || ISCHANGED( UFC_Event_Interest__c ) || ISCHANGED( F1MX_Event_Interest__c ) || ISCHANGED( USATSE_Event_Interest__c ) || ISNEW()</formula>
         <triggerType>onAllChanges</triggerType>
     </rules>
 </Workflow>

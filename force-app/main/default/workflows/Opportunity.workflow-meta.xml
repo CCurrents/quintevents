@@ -953,8 +953,7 @@
         </actions>
         <active>false</active>
         <description>Update Google Analytics Source on Opportunity from Primary Contact&apos;s Google Analytics Source</description>
-        <formula>NOT(ISBLANK(Primary_Contact__c)) &amp;&amp;   NOT(ISBLANK(Primary_Contact__r.pi__utm_source__c)) &amp;&amp;
-ISBLANK(Google_Analytics_Source__c)</formula>
+        <formula>NOT(ISBLANK(Primary_Contact__c)) &amp;&amp;   NOT(ISBLANK(Primary_Contact__r.pi__utm_source__c)) &amp;&amp; ISBLANK(Google_Analytics_Source__c)</formula>
         <triggerType>onCreateOrTriggeringUpdate</triggerType>
     </rules>
     <rules>
