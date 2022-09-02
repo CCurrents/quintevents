@@ -470,7 +470,7 @@ ISPICKVAL(PRIORVALUE({!myVariable_old.StageName}),&apos;Closed Won&apos;),
     </processMetadataValues>
     <processType>Workflow</processType>
     <startElementReference>myDecision</startElementReference>
-    <status>Active</status>
+    <status>Obsolete</status>
     <variables>
         <name>myVariable_current</name>
         <dataType>SObject</dataType>
