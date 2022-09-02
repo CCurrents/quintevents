@@ -573,7 +573,7 @@ Signed_Reasons_For_Review_H4H__c != null,
             <name>Send_Payment_Email_True</name>
             <type>FieldUpdate</type>
         </actions>
-        <active>true</active>
+        <active>false</active>
         <criteriaItems>
             <field>Quote.Payment_Method__c</field>
             <operation>equals</operation>
@@ -587,7 +587,7 @@ Signed_Reasons_For_Review_H4H__c != null,
             <name>Send_Payment_Email_False</name>
             <type>FieldUpdate</type>
         </actions>
-        <active>true</active>
+        <active>false</active>
         <criteriaItems>
             <field>Quote.Payment_Method__c</field>
             <operation>notEqual</operation>

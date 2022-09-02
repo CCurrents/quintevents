@@ -135,7 +135,7 @@
             <name>Sf_Api_for_Product</name>
             <type>OutboundMessage</type>
         </actions>
-        <active>true</active>
+        <active>false</active>
         <description>Rule to active QNG Product outbound message</description>
         <formula>NOT($Setup.ByPass_Rules__c.Outbound_Messages__c) &amp;&amp; RecordType.DeveloperName != &apos;Hotels&apos;</formula>
         <triggerType>onAllChanges</triggerType>
@@ -146,7 +146,7 @@
             <name>Updated_Product_Deactivate_Date_Time_aft</name>
             <type>FieldUpdate</type>
         </actions>
-        <active>true</active>
+        <active>false</active>
         <criteriaItems>
             <field>Product2.Deactivate_after_24_hours__c</field>
             <operation>equals</operation>

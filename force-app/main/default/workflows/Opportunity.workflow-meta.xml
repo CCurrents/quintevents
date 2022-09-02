@@ -654,7 +654,7 @@
             <name>To_notify_user_on_commision_value_with_link</name>
             <type>Alert</type>
         </actions>
-        <active>true</active>
+        <active>false</active>
         <formula>ISPICKVAL( StageName , &apos;Closed Won&apos;) &amp;&amp;  NOT( ISBLANK( Commission__c ) )</formula>
         <triggerType>onCreateOrTriggeringUpdate</triggerType>
     </rules>
@@ -664,7 +664,7 @@
             <name>update_Contact_ID</name>
             <type>FieldUpdate</type>
         </actions>
-        <active>true</active>
+        <active>false</active>
         <criteriaItems>
             <field>Account.RecordTypeId</field>
             <operation>equals</operation>
@@ -678,7 +678,7 @@
             <name>Email_when_Intacct_status_Failed</name>
             <type>Alert</type>
         </actions>
-        <active>true</active>
+        <active>false</active>
         <criteriaItems>
             <field>Opportunity.Intacct_Status__c</field>
             <operation>equals</operation>
@@ -693,7 +693,7 @@
             <name>Update_Pick_Up_Requested</name>
             <type>FieldUpdate</type>
         </actions>
-        <active>true</active>
+        <active>false</active>
         <formula>AND(NOT(ISBLANK( Pricebook2.Switch_to_Pick_Up_Only_Date__c)), Pricebook2.Switch_to_Pick_Up_Only_Date__c &lt;= DATEVALUE(CreatedDate))</formula>
         <triggerType>onCreateOnly</triggerType>
     </rules>
@@ -703,7 +703,7 @@
             <name>QE_Opportunity_Closed_Won_With_Products</name>
             <type>Alert</type>
         </actions>
-        <active>true</active>
+        <active>false</active>
         <criteriaItems>
             <field>Opportunity.StageName</field>
             <operation>equals</operation>
@@ -741,7 +741,7 @@
             <name>Update_Projected_Revenue</name>
             <type>FieldUpdate</type>
         </actions>
-        <active>true</active>
+        <active>false</active>
         <formula>OR(AND(ISCHANGED(Amount), Amount  &gt; 0),AND(ISCHANGED(Amount),  PRIORVALUE(Amount)&gt;0))</formula>
         <triggerType>onAllChanges</triggerType>
     </rules>
@@ -779,7 +779,7 @@
             <name>Sf_Api_for_Opportunity</name>
             <type>OutboundMessage</type>
         </actions>
-        <active>true</active>
+        <active>false</active>
         <description>Sends Outbounds Message to SF API for Opportunity</description>
         <formula>IF(AND(NOT($Setup.ByPass_Rules__c.Outbound_Messages__c), Refund_Reconciliation__c = false, OR(Pricebook2.GPE_Event__c = false, GPE_Online_Order__c = true)), true, false)</formula>
         <triggerType>onAllChanges</triggerType>
@@ -790,7 +790,7 @@
             <name>QNG_Opportunity_Payment_Emails</name>
             <type>OutboundMessage</type>
         </actions>
-        <active>true</active>
+        <active>false</active>
         <formula>if(AND(NOT($Setup.ByPass_Rules__c.Outbound_Messages__c), ISPICKVAL(StageName , &apos;Closed Won&apos;), ISPICKVAL(Payment_Method__c , &apos;Credit Card&apos;), Send_Payment_Email__c = true, Online_Order__c = false, OR(Pricebook2.GPE_Event__c = false, GPE_Online_Order__c = true), CloseDate &gt;= DATE(2020,9,8)),true, false)</formula>
         <triggerType>onCreateOrTriggeringUpdate</triggerType>
     </rules>
@@ -800,7 +800,7 @@
             <name>QNG_Opportunity_Payment_Emails</name>
             <type>OutboundMessage</type>
         </actions>
-        <active>true</active>
+        <active>false</active>
         <description>Removed &quot;&amp;&amp; (Datevalue(NOW()) - (CloseDate)  &lt;= 2)&quot; as this workflow is related to resend payment email functionality.</description>
         <formula>IF(AND( NOT($Setup.ByPass_Rules__c.Outbound_Messages__c), Send_Outbound_Message__c = true,   ISPICKVAL(StageName , &apos;Closed Won&apos;), OR(Pricebook2.GPE_Event__c = false, GPE_Online_Order__c = true),  Refund_Reconciliation__c = false), true, false)</formula>
         <triggerType>onCreateOrTriggeringUpdate</triggerType>
@@ -820,7 +820,7 @@
             <name>F1E_Custom_Payment_Terms_Closed_Won_Oppt_to_CB</name>
             <type>Alert</type>
         </actions>
-        <active>true</active>
+        <active>false</active>
         <criteriaItems>
             <field>Opportunity.StageName</field>
             <operation>equals</operation>
@@ -867,7 +867,7 @@
             <name>F1E_Custom_Payment_Terms_Closed_Won_Oppt_to_CB</name>
             <type>Alert</type>
         </actions>
-        <active>true</active>
+        <active>false</active>
         <booleanFilter>(1 and 2 and 3 and 4)</booleanFilter>
         <criteriaItems>
             <field>Opportunity.StageName</field>
@@ -914,7 +914,7 @@
             <name>Update_Pickup</name>
             <type>FieldUpdate</type>
         </actions>
-        <active>true</active>
+        <active>false</active>
         <formula>AND(Pricebook2.Name = &quot;2019 Formula 1 Chinese Grand Prix&quot;,ISNEW())</formula>
         <triggerType>onAllChanges</triggerType>
     </rules>
@@ -932,7 +932,7 @@
             <name>Update_Phone</name>
             <type>FieldUpdate</type>
         </actions>
-        <active>true</active>
+        <active>false</active>
         <criteriaItems>
             <field>Opportunity.RecordTypeId</field>
             <operation>equals</operation>
@@ -951,7 +951,7 @@
             <name>Update_GA_Source</name>
             <type>FieldUpdate</type>
         </actions>
-        <active>true</active>
+        <active>false</active>
         <description>Update Google Analytics Source on Opportunity from Primary Contact&apos;s Google Analytics Source</description>
         <formula>NOT(ISBLANK(Primary_Contact__c)) &amp;&amp;   NOT(ISBLANK(Primary_Contact__r.pi__utm_source__c)) &amp;&amp;
 ISBLANK(Google_Analytics_Source__c)</formula>
@@ -963,7 +963,7 @@ ISBLANK(Google_Analytics_Source__c)</formula>
             <name>update_promo_field</name>
             <type>FieldUpdate</type>
         </actions>
-        <active>true</active>
+        <active>false</active>
         <description>updates the text field, Promo, with the formula field, Promoter, as a text value</description>
         <formula>NOT(ISBLANK(Promoter__c))</formula>
         <triggerType>onAllChanges</triggerType>
@@ -997,7 +997,7 @@ ISBLANK(Google_Analytics_Source__c)</formula>
             <name>Update_Opp_Amount</name>
             <type>FieldUpdate</type>
         </actions>
-        <active>true</active>
+        <active>false</active>
         <description>updates Amount field on Opportunity with Grand Total, if possible</description>
         <formula>Amount &lt;&gt; Grand_Total__c</formula>
         <triggerType>onAllChanges</triggerType>

@@ -194,7 +194,7 @@ for Sharing Accounts that have F1 Buyers
             <name>Update_Deposit_Request_Events</name>
             <type>FieldUpdate</type>
         </actions>
-        <active>true</active>
+        <active>false</active>
         <formula>(
 (ISNEW() &amp;&amp; LOWER(Latest_Event_Status__c) = &apos;deposit&apos;) ||
 (ISCHANGED(Latest_Event_Status__c) &amp;&amp; LOWER(Latest_Event_Status__c) = &apos;deposit&apos;)
@@ -209,7 +209,7 @@ for Sharing Accounts that have F1 Buyers
             <name>Accounts_to_QNG</name>
             <type>OutboundMessage</type>
         </actions>
-        <active>true</active>
+        <active>false</active>
         <description>Sends Outbounds Message to QNG for Account</description>
         <formula>NOT($Setup.ByPass_Rules__c.Outbound_Messages__c)</formula>
         <triggerType>onAllChanges</triggerType>
@@ -220,7 +220,7 @@ for Sharing Accounts that have F1 Buyers
             <name>update_F1_Buyer_Count</name>
             <type>FieldUpdate</type>
         </actions>
-        <active>true</active>
+        <active>false</active>
         <criteriaItems>
             <field>Account.F1_Buyer_Roll_Up__c</field>
             <operation>notEqual</operation>
@@ -239,7 +239,7 @@ i.e.  Share F1 Accounts with Charlotte Hill per MC
             <name>Update_Person_Deposit_Request_Events</name>
             <type>FieldUpdate</type>
         </actions>
-        <active>true</active>
+        <active>false</active>
         <formula>(
 (ISNEW() &amp;&amp; LOWER(Latest_Event_Status__pc) = &apos;deposit&apos;) ||
 (ISCHANGED(Latest_Event_Status__pc) &amp;&amp; LOWER(Latest_Event_Status__pc) = &apos;deposit&apos;)
@@ -254,7 +254,7 @@ i.e.  Share F1 Accounts with Charlotte Hill per MC
             <name>Set_to_Full_Phone</name>
             <type>FieldUpdate</type>
         </actions>
-        <active>true</active>
+        <active>false</active>
         <formula>OR(AND(ISNEW(), NOT(ISBLANK(Full_Phone__c))), ISCHANGED(Full_Phone__c))</formula>
         <triggerType>onAllChanges</triggerType>
     </rules>
@@ -264,7 +264,7 @@ i.e.  Share F1 Accounts with Charlotte Hill per MC
             <name>update_Event_Interest_with_Latest</name>
             <type>FieldUpdate</type>
         </actions>
-        <active>true</active>
+        <active>false</active>
         <description>update Account latest event interests based on Latest Event Interest</description>
         <formula>OR(ISNEW(),ISCHANGED(Latest_Event_Interest__c))</formula>
         <triggerType>onAllChanges</triggerType>
@@ -275,7 +275,7 @@ i.e.  Share F1 Accounts with Charlotte Hill per MC
             <name>update_Account_Latest_Event_Interest</name>
             <type>FieldUpdate</type>
         </actions>
-        <active>true</active>
+        <active>false</active>
         <description>update Account latest event interests based on Picklist</description>
         <formula>AND(NOT(ISBLANK( Event_Interest_Picklist_PB__c )), OR(ISNEW(),ISCHANGED(Event_Interest_Picklist_PB__c)))</formula>
         <triggerType>onAllChanges</triggerType>
@@ -286,7 +286,7 @@ i.e.  Share F1 Accounts with Charlotte Hill per MC
             <name>update_Event_Interest_with_Latest_P</name>
             <type>FieldUpdate</type>
         </actions>
-        <active>true</active>
+        <active>false</active>
         <description>update Person Account latest event interests based on Latest Event Interest</description>
         <formula>OR(ISNEW(),ISCHANGED(Latest_Event_Interest__pc)) &amp;&amp;  IsPersonAccount = True</formula>
         <triggerType>onAllChanges</triggerType>
@@ -297,7 +297,7 @@ i.e.  Share F1 Accounts with Charlotte Hill per MC
             <name>update_Account_Latest_Event_Interest_P</name>
             <type>FieldUpdate</type>
         </actions>
-        <active>true</active>
+        <active>false</active>
         <description>update Person Account latest event interests based on Picklist</description>
         <formula>AND(NOT(ISBLANK(Event_Interest_Picklist_PB__pc)), OR(ISNEW(),ISCHANGED(Event_Interest_Picklist_PB__pc))) &amp;&amp;
 IsPersonAccount = true</formula>
@@ -313,7 +313,7 @@ IsPersonAccount = true</formula>
             <name>update_Acct_Latest_Event_Int_with_Pickli</name>
             <type>FieldUpdate</type>
         </actions>
-        <active>true</active>
+        <active>false</active>
         <description>updates Person Account Event Interests based on Picklist</description>
         <formula>ISCHANGED(Event_Interest_Picklist__pc)</formula>
         <triggerType>onAllChanges</triggerType>

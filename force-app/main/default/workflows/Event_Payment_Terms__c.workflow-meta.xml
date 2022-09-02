@@ -32,7 +32,7 @@
             <name>QNG_Event_Payment_Term</name>
             <type>OutboundMessage</type>
         </actions>
-        <active>true</active>
+        <active>false</active>
         <description>Sends Outbounds Message to QNG for Event Payment Terms</description>
         <formula>NOT($Setup.ByPass_Rules__c.Outbound_Messages__c)</formula>
         <triggerType>onAllChanges</triggerType>

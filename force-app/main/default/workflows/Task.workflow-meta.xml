@@ -6,7 +6,7 @@
             <name>Duplicate_Lead_Alert</name>
             <type>Task</type>
         </actions>
-        <active>true</active>
+        <active>false</active>
         <criteriaItems>
             <field>Task.OwnerId</field>
             <operation>equals</operation>

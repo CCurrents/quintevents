@@ -413,7 +413,7 @@
             <name>QNG_Order_Outbound_on_Click</name>
             <type>OutboundMessage</type>
         </actions>
-        <active>true</active>
+        <active>false</active>
         <formula>IF(AND(NOT($Setup.ByPass_Rules__c.Outbound_Messages__c), OR(Online_Order__c = false,GPE_Online_Order__c = True), Send_Outbound_Message__c = true, OR(Opportunity.Pricebook2.GPE_Event__c = false,GPE_Online_Order__c = True), Refund_Reconciliation__c = false ,OR(Payment_Method__c = &apos;Credit Card&apos;, Payment_Method__c = &apos;Online Sale&apos;)), true, false)</formula>
         <triggerType>onCreateOrTriggeringUpdate</triggerType>
     </rules>
@@ -423,7 +423,7 @@
             <name>SF_API_Order</name>
             <type>OutboundMessage</type>
         </actions>
-        <active>true</active>
+        <active>false</active>
         <description>9/18: GPT Online Order outbound does need to go to SF-API but not to QNG</description>
         <formula>AND(NOT($Setup.ByPass_Rules__c.Outbound_Messages__c),OR(Opportunity.Pricebook2.GPE_Event__c = false,GPE_Online_Order__c = True))</formula>
         <triggerType>onAllChanges</triggerType>

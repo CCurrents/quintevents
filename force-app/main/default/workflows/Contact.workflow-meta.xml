@@ -54,7 +54,7 @@ Latest_Event_Interest__c &amp; &apos;, &apos; &amp; Deposit_Requested_Events__c)
             <name>Update_Deposit_Request_Events</name>
             <type>FieldUpdate</type>
         </actions>
-        <active>true</active>
+        <active>false</active>
         <formula>(
 (ISNEW() &amp;&amp; LOWER(Latest_Event_Status__c) = &apos;deposit&apos;) ||
 (ISCHANGED(Latest_Event_Status__c) &amp;&amp; LOWER(Latest_Event_Status__c) = &apos;deposit&apos;)
@@ -69,7 +69,7 @@ Latest_Event_Interest__c &amp; &apos;, &apos; &amp; Deposit_Requested_Events__c)
             <name>Contacts_to_QNG</name>
             <type>OutboundMessage</type>
         </actions>
-        <active>true</active>
+        <active>false</active>
         <description>Sends Outbounds Message to QNG for Contacts</description>
         <formula>NOT($Setup.ByPass_Rules__c.Outbound_Messages__c)</formula>
         <triggerType>onAllChanges</triggerType>
@@ -84,7 +84,7 @@ Latest_Event_Interest__c &amp; &apos;, &apos; &amp; Deposit_Requested_Events__c)
             <name>update_Latest_Event_Interest</name>
             <type>FieldUpdate</type>
         </actions>
-        <active>true</active>
+        <active>false</active>
         <description>updates the Latest and addends to Event Interests</description>
         <formula>ISCHANGED(Event_Interest_Picklist_PB__c)</formula>
         <triggerType>onAllChanges</triggerType>

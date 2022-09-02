@@ -32,7 +32,7 @@
             <name>SF_API_Sales_Agents</name>
             <type>OutboundMessage</type>
         </actions>
-        <active>true</active>
+        <active>false</active>
         <formula>NOT($Setup.ByPass_Rules__c.Outbound_Messages__c)</formula>
         <triggerType>onAllChanges</triggerType>
     </rules>

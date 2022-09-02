@@ -16,7 +16,7 @@
             <name>GPE_Credit</name>
             <type>FieldUpdate</type>
         </actions>
-        <active>true</active>
+        <active>false</active>
         <formula>CONTAINS(Opportunity__r.Name,&quot;GPE&quot;) &amp;&amp;  
 Is_Credit_Adjustment__c  = true</formula>
         <triggerType>onCreateOrTriggeringUpdate</triggerType>

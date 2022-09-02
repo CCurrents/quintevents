@@ -90,7 +90,7 @@
             <name>Sf_Api_OpportunityLineItem</name>
             <type>OutboundMessage</type>
         </actions>
-        <active>true</active>
+        <active>false</active>
         <formula>IF( AND(NOT($Setup.ByPass_Rules__c.Outbound_Messages__c), Opportunity.Pricebook2.GPE_Event__c = false), true, false)</formula>
         <triggerType>onAllChanges</triggerType>
     </rules>

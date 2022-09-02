@@ -57,7 +57,7 @@
             <name>Set_Requested_Due_Date_to_Blank</name>
             <type>FieldUpdate</type>
         </actions>
-        <active>true</active>
+        <active>false</active>
         <formula>AND(ISCHANGED( Payment_Due_Date__c ), NOT(ISNULL( Requested_Due_Date__c )))</formula>
         <triggerType>onAllChanges</triggerType>
     </rules>
@@ -67,7 +67,7 @@
             <name>Sf_Api_for_Opportunity_Payment_Terms</name>
             <type>OutboundMessage</type>
         </actions>
-        <active>true</active>
+        <active>false</active>
         <description>Sends Outbounds Message to QNG for Payment Terms</description>
         <formula>NOT($Setup.ByPass_Rules__c.Outbound_Messages__c)</formula>
         <triggerType>onAllChanges</triggerType>

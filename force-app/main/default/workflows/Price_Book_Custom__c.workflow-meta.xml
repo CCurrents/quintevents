@@ -34,7 +34,7 @@
             <name>GPEPriceBook</name>
             <type>Alert</type>
         </actions>
-        <active>true</active>
+        <active>false</active>
         <description>Send Email alert on creation of new GPE PriceBook</description>
         <formula>OR(Price_Book2__r.GPE_Event__c == True, CONTAINS(Name, &apos;GPE&apos;))</formula>
         <triggerType>onCreateOrTriggeringUpdate</triggerType>
@@ -45,7 +45,7 @@
             <name>Sf_Api_for_Price_Book</name>
             <type>OutboundMessage</type>
         </actions>
-        <active>true</active>
+        <active>false</active>
         <description>Send outbound to QNG for Custom Price Book</description>
         <formula>NOT($Setup.ByPass_Rules__c.Outbound_Messages__c)</formula>
         <triggerType>onAllChanges</triggerType>

@@ -44,7 +44,7 @@
             <name>Sf_Api_for_Rooming_List</name>
             <type>OutboundMessage</type>
         </actions>
-        <active>true</active>
+        <active>false</active>
         <description>Send outbound to QNG for Rooming List Object</description>
         <formula>NOT($Setup.ByPass_Rules__c.Outbound_Messages__c)</formula>
         <triggerType>onAllChanges</triggerType>

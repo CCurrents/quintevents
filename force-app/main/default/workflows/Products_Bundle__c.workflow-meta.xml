@@ -29,7 +29,7 @@
             <name>Sf_Api_for_Product_Bundle</name>
             <type>OutboundMessage</type>
         </actions>
-        <active>true</active>
+        <active>false</active>
         <description>Rule to send Product Bundle information to QNG</description>
         <formula>NOT($Setup.ByPass_Rules__c.Outbound_Messages__c)</formula>
         <triggerType>onAllChanges</triggerType>
