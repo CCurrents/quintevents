@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>GPEPriceBook</fullName>
+        <description>Send Email Alert on creation of new GPE PriceBook</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>amcgrath@quintevents.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>kgriffin@f1experiences.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>DefaultWorkflowUser</senderType>
+        <template>unfiled$public/GPE_Pricebook</template>
+    </alerts>
+    <outboundMessages>
+        <fullName>Sf_Api_for_Price_Book</fullName>
+        <apiVersion>47.0</apiVersion>
+        <endpointUrl>https://sf-api.quintevents.com/pricebooks/sf_update</endpointUrl>
+        <fields>Id</fields>
+        <fields>LastModifiedDate</fields>
+        <fields>Price_Book2__c</fields>
+        <includeSessionId>false</includeSessionId>
+        <integrationUser>qeadmin@addonblue.com</integrationUser>
+        <name>Sf Api for Price Book</name>
+        <protected>false</protected>
+        <useDeadLetterQueue>false</useDeadLetterQueue>
+    </outboundMessages>
+    <rules>
+        <fullName>New GPE Pricebook Creation</fullName>
+        <actions>
+            <name>GPEPriceBook</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <description>Send Email alert on creation of new GPE PriceBook</description>
+        <formula>OR(Price_Book2__r.GPE_Event__c == True, CONTAINS(Name, &apos;GPE&apos;))</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>QNG Price Book</fullName>
+        <actions>
+            <name>Sf_Api_for_Price_Book</name>
+            <type>OutboundMessage</type>
+        </actions>
+        <active>true</active>
+        <description>Send outbound to QNG for Custom Price Book</description>
+        <formula>NOT($Setup.ByPass_Rules__c.Outbound_Messages__c)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+</Workflow>

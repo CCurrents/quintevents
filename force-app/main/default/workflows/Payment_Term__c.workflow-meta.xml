@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldUpdates>
+        <fullName>Set_Requested_Due_Date_to_Blank</fullName>
+        <description>This sets &quot;Requested Due Date&quot; field to blank after the approval request has been approved or rejected.</description>
+        <field>Requested_Due_Date__c</field>
+        <name>Set Requested Due Date to Blank</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Null</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <outboundMessages>
+        <fullName>Send_Requested_due_date</fullName>
+        <apiVersion>44.0</apiVersion>
+        <endpointUrl>https://sf-api.quintevents.com/orders_app/payment_terms/update</endpointUrl>
+        <fields>Id</fields>
+        <fields>LastModifiedDate</fields>
+        <fields>Requested_Due_Date__c</fields>
+        <includeSessionId>false</includeSessionId>
+        <integrationUser>lockedjprajapati@addonblue.com</integrationUser>
+        <name>Send Requested due date</name>
+        <protected>false</protected>
+        <useDeadLetterQueue>false</useDeadLetterQueue>
+    </outboundMessages>
+    <outboundMessages>
+        <fullName>Sf_Api_for_Opportunity_Payment_Terms</fullName>
+        <apiVersion>40.0</apiVersion>
+        <endpointUrl>https://sf-api.quintevents.com/payment_terms/sf_update</endpointUrl>
+        <fields>Amount__c</fields>
+        <fields>CreatedById</fields>
+        <fields>CreatedDate</fields>
+        <fields>Id</fields>
+        <fields>IsDeleted</fields>
+        <fields>LastModifiedById</fields>
+        <fields>LastModifiedDate</fields>
+        <fields>Name</fields>
+        <fields>Opportunity__c</fields>
+        <fields>Order__c</fields>
+        <fields>OwnerId</fields>
+        <fields>Payment_Due_Date__c</fields>
+        <fields>Payment_Term__c</fields>
+        <fields>Percentage_Of_Payment__c</fields>
+        <fields>Quote__c</fields>
+        <fields>RecordTypeName__c</fields>
+        <fields>Status__c</fields>
+        <fields>SystemModstamp</fields>
+        <includeSessionId>false</includeSessionId>
+        <integrationUser>qescobar@quintevents.com</integrationUser>
+        <name>Sf Api for Opportunity Payment Terms</name>
+        <protected>false</protected>
+        <useDeadLetterQueue>false</useDeadLetterQueue>
+    </outboundMessages>
+    <rules>
+        <fullName>QE_Opportunity_Payment_Terms_Requested_Due_Date</fullName>
+        <actions>
+            <name>Set_Requested_Due_Date_to_Blank</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>AND(ISCHANGED( Payment_Due_Date__c ), NOT(ISNULL( Requested_Due_Date__c )))</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>QNG Opportunity Payment Terms</fullName>
+        <actions>
+            <name>Sf_Api_for_Opportunity_Payment_Terms</name>
+            <type>OutboundMessage</type>
+        </actions>
+        <active>true</active>
+        <description>Sends Outbounds Message to QNG for Payment Terms</description>
+        <formula>NOT($Setup.ByPass_Rules__c.Outbound_Messages__c)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+</Workflow>

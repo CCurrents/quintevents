@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <outboundMessages>
+        <fullName>SF_API_Sales_Agent_Events</fullName>
+        <apiVersion>48.0</apiVersion>
+        <endpointUrl>https://sf-api.quintevents.com/sales_agent_events/sf_update</endpointUrl>
+        <fields>Commission_Percent__c</fields>
+        <fields>CreatedById</fields>
+        <fields>CreatedDate</fields>
+        <fields>CurrencyIsoCode</fields>
+        <fields>Id</fields>
+        <fields>IsDeleted</fields>
+        <fields>LastModifiedById</fields>
+        <fields>LastModifiedDate</fields>
+        <fields>Legacy_Id__c</fields>
+        <fields>Name</fields>
+        <fields>OwnerId</fields>
+        <fields>Price_Book__c</fields>
+        <fields>Sales_Agent__c</fields>
+        <fields>SystemModstamp</fields>
+        <includeSessionId>false</includeSessionId>
+        <integrationUser>qeadmin@addonblue.com</integrationUser>
+        <name>SF API - Sales Agent Events</name>
+        <protected>false</protected>
+        <useDeadLetterQueue>false</useDeadLetterQueue>
+    </outboundMessages>
+    <rules>
+        <fullName>SF API - Sales Agent Events</fullName>
+        <actions>
+            <name>SF_API_Sales_Agent_Events</name>
+            <type>OutboundMessage</type>
+        </actions>
+        <active>true</active>
+        <formula>NOT($Setup.ByPass_Rules__c.Outbound_Messages__c)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+</Workflow>

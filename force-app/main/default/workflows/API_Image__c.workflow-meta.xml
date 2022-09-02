@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <outboundMessages>
+        <fullName>Sf_Api_for_Image</fullName>
+        <apiVersion>45.0</apiVersion>
+        <endpointUrl>https://sf-api.quintevents.com/images/sf_update</endpointUrl>
+        <fields>Event__c</fields>
+        <fields>Id</fields>
+        <fields>LastActivityDate</fields>
+        <fields>Name</fields>
+        <fields>Price_Book__c</fields>
+        <fields>Product__c</fields>
+        <fields>Type__c</fields>
+        <fields>URL__c</fields>
+        <includeSessionId>false</includeSessionId>
+        <integrationUser>qescobar@quintevents.com</integrationUser>
+        <name>Sf Api for Image</name>
+        <protected>false</protected>
+        <useDeadLetterQueue>false</useDeadLetterQueue>
+    </outboundMessages>
+    <rules>
+        <fullName>QNG Image</fullName>
+        <actions>
+            <name>Sf_Api_for_Image</name>
+            <type>OutboundMessage</type>
+        </actions>
+        <active>true</active>
+        <formula>NOT($Setup.ByPass_Rules__c.Outbound_Messages__c)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+</Workflow>

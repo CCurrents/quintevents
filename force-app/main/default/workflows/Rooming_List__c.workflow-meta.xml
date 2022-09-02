@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <outboundMessages>
+        <fullName>Sf_Api_for_Rooming_List</fullName>
+        <apiVersion>47.0</apiVersion>
+        <endpointUrl>https://sf-api.quintevents.com/rooming_lists/sf_update</endpointUrl>
+        <fields>Check_In_Date__c</fields>
+        <fields>Check_Out_Date__c</fields>
+        <fields>CreatedById</fields>
+        <fields>CreatedDate</fields>
+        <fields>CurrencyIsoCode</fields>
+        <fields>Guest_Name__c</fields>
+        <fields>H4H_Hotel_Id__c</fields>
+        <fields>H4H_Itinerary_Id__c</fields>
+        <fields>H4H_RatePlan_Code__c</fields>
+        <fields>H4H_Reservation_Id__c</fields>
+        <fields>H4H_Room_Code__c</fields>
+        <fields>H4H_Roomtype_Id__c</fields>
+        <fields>Hotel_Id__c</fields>
+        <fields>Id</fields>
+        <fields>IsDeleted</fields>
+        <fields>LastModifiedById</fields>
+        <fields>LastModifiedDate</fields>
+        <fields>Name</fields>
+        <fields>Number_of_Adults__c</fields>
+        <fields>OpportunityLineItem_Id__c</fields>
+        <fields>Opportunity__c</fields>
+        <fields>OwnerId</fields>
+        <fields>Product__c</fields>
+        <fields>QNG_Rooming_List_Id__c</fields>
+        <fields>QuoteLineItem_Id__c</fields>
+        <fields>Quote__c</fields>
+        <fields>Stay_Id__c</fields>
+        <fields>SystemModstamp</fields>
+        <includeSessionId>false</includeSessionId>
+        <integrationUser>jpatel@quintevents.com</integrationUser>
+        <name>Sf Api for Rooming List</name>
+        <protected>false</protected>
+        <useDeadLetterQueue>false</useDeadLetterQueue>
+    </outboundMessages>
+    <rules>
+        <fullName>QNG Rooming List</fullName>
+        <actions>
+            <name>Sf_Api_for_Rooming_List</name>
+            <type>OutboundMessage</type>
+        </actions>
+        <active>true</active>
+        <description>Send outbound to QNG for Rooming List Object</description>
+        <formula>NOT($Setup.ByPass_Rules__c.Outbound_Messages__c)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rooming List Check</fullName>
+        <active>false</active>
+        <formula>(ISNEW() &amp;&amp; NOT(ISBLANK(Quote__c)))</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+</Workflow>
