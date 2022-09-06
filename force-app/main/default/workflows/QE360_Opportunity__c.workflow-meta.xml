@@ -1,21 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
-    <alerts>
-        <fullName>QE360_Opportunity_Closed_Lost_From_Closed_Won</fullName>
-        <ccEmails>accounting@quintevents.com</ccEmails>
-        <description>QE360_Opportunity_Closed_Lost_From_Closed_Won</description>
-        <protected>false</protected>
-        <recipients>
-            <type>owner</type>
-        </recipients>
-        <recipients>
-            <recipient>aodom@quintevents.com</recipient>
-            <type>user</type>
-        </recipients>
-        <senderAddress>payments@quintevents.com</senderAddress>
-        <senderType>OrgWideEmailAddress</senderType>
-        <template>unfiled$public/QE360_Opportunity_Closed_Lost_From_Closed_Won</template>
-    </alerts>
     <fieldUpdates>
         <fullName>Update_Opportunity_Stage_To_Hold</fullName>
         <field>Stage__c</field>

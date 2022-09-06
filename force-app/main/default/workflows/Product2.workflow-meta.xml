@@ -1,27 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
-    <alerts>
-        <fullName>Product_Inventory_Low</fullName>
-        <description>QE_Product_Inventory_Low_To_Operations</description>
-        <protected>false</protected>
-        <recipients>
-            <recipient>Operations_Team</recipient>
-            <type>group</type>
-        </recipients>
-        <senderType>CurrentUser</senderType>
-        <template>unfiled$public/Product_Inventory_Low</template>
-    </alerts>
-    <alerts>
-        <fullName>Product_Inventory_Low_Below_5</fullName>
-        <description>QE_Product_Inventory_Low_To_Operations_Below_5</description>
-        <protected>false</protected>
-        <recipients>
-            <recipient>aodom@quintevents.com</recipient>
-            <type>user</type>
-        </recipients>
-        <senderType>CurrentUser</senderType>
-        <template>unfiled$public/Product_Inventory_Low</template>
-    </alerts>
     <fieldUpdates>
         <fullName>Updated_IsActive_to_False</fullName>
         <field>IsActive</field>
