@@ -5,11 +5,7 @@
         <description>Send Email Alert on creation of new GPE PriceBook</description>
         <protected>false</protected>
         <recipients>
-            <recipient>amcgrath@quintevents.com</recipient>
-            <type>user</type>
-        </recipients>
-        <recipients>
-            <recipient>kgriffin@f1experiences.com</recipient>
+            <recipient>aodom@quintevents.com</recipient>
             <type>user</type>
         </recipients>
         <senderType>DefaultWorkflowUser</senderType>

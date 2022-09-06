@@ -5,7 +5,7 @@
         <description>Contracts/Quotes Denied (Daily Dashboard)</description>
         <protected>false</protected>
         <recipients>
-            <recipient>bhaines@quintevents.com</recipient>
+            <recipient>aodom@quintevents.com</recipient>
             <type>user</type>
         </recipients>
         <senderType>CurrentUser</senderType>

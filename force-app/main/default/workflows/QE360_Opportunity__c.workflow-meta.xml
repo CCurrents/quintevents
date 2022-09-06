@@ -9,23 +9,7 @@
             <type>owner</type>
         </recipients>
         <recipients>
-            <recipient>jvansparrentak@quintevents.com</recipient>
-            <type>user</type>
-        </recipients>
-        <recipients>
-            <recipient>klankford@quintevents.com</recipient>
-            <type>user</type>
-        </recipients>
-        <recipients>
-            <recipient>lockedabeaver@quintevents.com</recipient>
-            <type>user</type>
-        </recipients>
-        <recipients>
-            <recipient>lockedahoffmann@quintevents.com</recipient>
-            <type>user</type>
-        </recipients>
-        <recipients>
-            <recipient>lockedkshimp@quintevents.com</recipient>
+            <recipient>aodom@quintevents.com</recipient>
             <type>user</type>
         </recipients>
         <senderAddress>payments@quintevents.com</senderAddress>

@@ -8,10 +8,6 @@
             <recipient>aodom@quintevents.com</recipient>
             <type>user</type>
         </recipients>
-        <recipients>
-            <recipient>lockedschilukuri@quintevents.com</recipient>
-            <type>user</type>
-        </recipients>
         <senderAddress>support@quintevents.com</senderAddress>
         <senderType>OrgWideEmailAddress</senderType>
         <template>unfiled$public/Email_to_Aaron_on_F1_codes_to_Opportunity</template>
@@ -24,14 +20,6 @@
             <recipient>aodom@quintevents.com</recipient>
             <type>user</type>
         </recipients>
-        <recipients>
-            <recipient>jpatel@quintevents.com</recipient>
-            <type>user</type>
-        </recipients>
-        <recipients>
-            <recipient>qeadmin@addonblue.com</recipient>
-            <type>user</type>
-        </recipients>
         <senderAddress>support@quintevents.com</senderAddress>
         <senderType>OrgWideEmailAddress</senderType>
         <template>unfiled$public/Email_for_Intacct_Status</template>
@@ -41,7 +29,7 @@
         <description>Sales Alert Email to CB</description>
         <protected>false</protected>
         <recipients>
-            <recipient>cbaker@quintevents.com</recipient>
+            <recipient>aodom@quintevents.com</recipient>
             <type>user</type>
         </recipients>
         <senderAddress>support@quintevents.com</senderAddress>
@@ -53,7 +41,7 @@
         <description>Email Closed Won with Products to CB</description>
         <protected>false</protected>
         <recipients>
-            <recipient>cbaker@quintevents.com</recipient>
+            <recipient>aodom@quintevents.com</recipient>
             <type>user</type>
         </recipients>
         <senderAddress>support@quintevents.com</senderAddress>
@@ -69,7 +57,7 @@
             <type>group</type>
         </recipients>
         <recipients>
-            <recipient>accounting@quintevents.com</recipient>
+            <recipient>aodom@quintevents.com</recipient>
             <type>user</type>
         </recipients>
         <senderAddress>support@quintevents.com</senderAddress>
@@ -85,7 +73,7 @@
             <type>group</type>
         </recipients>
         <recipients>
-            <recipient>accounting@quintevents.com</recipient>
+            <recipient>aodom@quintevents.com</recipient>
             <type>user</type>
         </recipients>
         <senderAddress>support@quintevents.com</senderAddress>
@@ -115,11 +103,7 @@
             <type>owner</type>
         </recipients>
         <recipients>
-            <recipient>accounting@quintevents.com</recipient>
-            <type>user</type>
-        </recipients>
-        <recipients>
-            <recipient>ddaniel@quintevents.com</recipient>
+            <recipient>aodom@quintevents.com</recipient>
             <type>user</type>
         </recipients>
         <senderAddress>support@quintevents.com</senderAddress>
@@ -131,7 +115,7 @@
         <description>QE_Opportunity_Closed_Lost_Manually To DH</description>
         <protected>false</protected>
         <recipients>
-            <recipient>dhiggins@quintevents.com</recipient>
+            <recipient>aodom@quintevents.com</recipient>
             <type>user</type>
         </recipients>
         <senderAddress>support@quintevents.com</senderAddress>
@@ -150,11 +134,7 @@
             <type>owner</type>
         </recipients>
         <recipients>
-            <recipient>accounting@quintevents.com</recipient>
-            <type>user</type>
-        </recipients>
-        <recipients>
-            <recipient>ddaniel@quintevents.com</recipient>
+            <recipient>aodom@quintevents.com</recipient>
             <type>user</type>
         </recipients>
         <senderAddress>support@quintevents.com</senderAddress>
@@ -170,7 +150,7 @@
             <type>group</type>
         </recipients>
         <recipients>
-            <recipient>accounting@quintevents.com</recipient>
+            <recipient>aodom@quintevents.com</recipient>
             <type>user</type>
         </recipients>
         <senderAddress>support@quintevents.com</senderAddress>
@@ -182,11 +162,7 @@
         <description>QE_Opportunity_Closed_Won_With_Products</description>
         <protected>false</protected>
         <recipients>
-            <recipient>bruede@quintevents.com</recipient>
-            <type>user</type>
-        </recipients>
-        <recipients>
-            <recipient>nbisho@quintevents.com</recipient>
+            <recipient>aodom@quintevents.com</recipient>
             <type>user</type>
         </recipients>
         <senderAddress>support@quintevents.com</senderAddress>
@@ -221,11 +197,7 @@
         <description>QE Rooming List Email alert</description>
         <protected>false</protected>
         <recipients>
-            <recipient>evanderlaan@quintevents.com</recipient>
-            <type>user</type>
-        </recipients>
-        <recipients>
-            <recipient>lockedahoffmann@quintevents.com</recipient>
+            <recipient>aodom@quintevents.com</recipient>
             <type>user</type>
         </recipients>
         <senderType>CurrentUser</senderType>
@@ -236,7 +208,7 @@
         <description>To notify user on commision value with link</description>
         <protected>false</protected>
         <recipients>
-            <recipient>accounting@quintevents.com</recipient>
+            <recipient>aodom@quintevents.com</recipient>
             <type>user</type>
         </recipients>
         <senderAddress>support@quintevents.com</senderAddress>

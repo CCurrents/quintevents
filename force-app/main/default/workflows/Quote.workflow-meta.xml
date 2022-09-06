@@ -16,15 +16,7 @@
         <description>QE_Quote_Draft_Approved_To_Sales</description>
         <protected>false</protected>
         <recipients>
-            <recipient>bruede@quintevents.com</recipient>
-            <type>user</type>
-        </recipients>
-        <recipients>
-            <recipient>ddaniel@quintevents.com</recipient>
-            <type>user</type>
-        </recipients>
-        <recipients>
-            <recipient>dhiggins@quintevents.com</recipient>
+            <recipient>aodom@quintevents.com</recipient>
             <type>user</type>
         </recipients>
         <senderType>CurrentUser</senderType>
@@ -56,15 +48,7 @@
         <description>QE_Quote_Draft_Denied_To_Sales</description>
         <protected>false</protected>
         <recipients>
-            <recipient>bruede@quintevents.com</recipient>
-            <type>user</type>
-        </recipients>
-        <recipients>
-            <recipient>ddaniel@quintevents.com</recipient>
-            <type>user</type>
-        </recipients>
-        <recipients>
-            <recipient>dhiggins@quintevents.com</recipient>
+            <recipient>aodom@quintevents.com</recipient>
             <type>user</type>
         </recipients>
         <senderType>CurrentUser</senderType>
@@ -99,7 +83,7 @@
             <type>group</type>
         </recipients>
         <recipients>
-            <recipient>accounting@quintevents.com</recipient>
+            <recipient>aodom@quintevents.com</recipient>
             <type>user</type>
         </recipients>
         <senderType>CurrentUser</senderType>

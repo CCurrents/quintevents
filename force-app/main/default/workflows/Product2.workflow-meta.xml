@@ -16,7 +16,7 @@
         <description>QE_Product_Inventory_Low_To_Operations_Below_5</description>
         <protected>false</protected>
         <recipients>
-            <recipient>adelves@quintevents.com</recipient>
+            <recipient>aodom@quintevents.com</recipient>
             <type>user</type>
         </recipients>
         <senderType>CurrentUser</senderType>
