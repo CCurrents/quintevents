@@ -1,6 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
     <types>
+        <members>Bulk_Shipment_Status</members>
+        <members>Change_Lead_Owner_Based_on_HS_Lead_Owner</members>
+        <members>Charge_Sync_To_Intacct</members>
+        <members>complaint_intake</members>
+        <members>Confirm_Refund_Addendum</members>
+        <members>Copy_Billing_Address_to_Shipping_Address</members>
+        <members>customer_satisfaction</members>
+        <members>derby_office_hours_v2</members>
+        <members>Docusign_Status_Changed</members>
+        <members>Enforce_Event_Name_equals_Opportunity_Name</members>
+        <members>f1e_template</members>
+        <members>formula_one_x</members>
+        <members>Lead</members>
+        <members>Lead_Status_Copy</members>
+        <members>net_promoter_score</members>
+        <members>Opportunity</members>
+        <members>Opportunity_Approval_is_expected_to_Confirm</members>
+        <members>Opportunity_Canceled_From_Closed_Won</members>
+        <members>Opportunity_Closed_Lost_From_Closed_Won</members>
+        <members>Opportunity_Contact_Processes</members>
+        <members>Opportunity_Default_Stage_Name</members>
+        <members>Opportunity_Payment_Term</members>
+        <members>Opportunity_Site_fields_Update</members>
+        <members>Order</members>
+        <members>Pick_up_true_when_quote_is_create</members>
+        <members>Post_to_Chatter</members>
+        <members>Product</members>
+        <members>QE_Docusign_Recipient_Status_Changed</members>
+        <members>QE_Docusign_Status_Changed</members>
+        <members>QE_Event_Updated</members>
+        <members>QE_Opportunity_Created_Or_Updated</members>
+        <members>QE_Opportunity_Stage_Changed</members>
+        <members>QE_Quote_Status_Changed</members>
+        <members>Quote</members>
+        <members>Quote_Approval_is_expected_to_Confirm</members>
+        <members>Quotes_notification_to_slack_channel</members>
+        <members>testing_v2</members>
+        <members>Update_Event_Interest_Picklist</members>
+        <members>update_MRE_on_account</members>
+        <members>Update_Quote_on_Quote_Line_Item_Insert</members>
+        <members>User</members>
+        <members>WK_Update_Product_Ticket_Total_Inventory</members>
+        <name>Flow</name>
+    </types>
+    <types>
         <members>Contract.Contracts_Quotes_Denied_Daily_Dashboard</members>
         <members>Lead.Lead_Email</members>
         <members>Opportunity.Email_when_F1_access_is_added_to_opportunity</members>
@@ -102,5 +147,9 @@
         <members>Lead.lead_assign_pselwood</members>
         <members>Lead.lead_assign_travellerinc</members>
         <name>WorkflowRule</name>
+    </types>
+    <types>
+        <members>DupeCatcher_Duplicate_Record_Alert_Auto</members>
+        <name>WorkflowTask</name>
     </types>
 </Package>
