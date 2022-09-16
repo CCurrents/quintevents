@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSetGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Contains all permissions necessary for the Marketing Cloud API user to sync data to and from Salesforce and Marketing Cloud.</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Marketing Cloud API User</label>
+    <permissionSets>MarketingCloudConnectedApp</permissionSets>
+    <permissionSets>et4ae5__ExactTarget_Integration</permissionSets>
+    <permissionSets>et4ae5__ExactTarget_Integration_Admin</permissionSets>
+    <permissionSets>et4ae5__Marketing_Cloud_System_User</permissionSets>
+    <status>Updated</status>
+</PermissionSetGroup>
