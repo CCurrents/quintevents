@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ContactSite__c</fullName>
+    <caseSensitive>false</caseSensitive>
+    <description>The Contact Site for the Campaign, unique to the Campaign.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>The Contact Site for the Campaign, unique to the Campaign.</inlineHelpText>
+    <label>Contact Site</label>
+    <length>255</length>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Text</type>
+    <unique>true</unique>
+</CustomField>

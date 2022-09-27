@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CampaignMemberId__c</fullName>
+    <description>Links the Info Request to a Campaign Member, if one is matched. This is a text value, not a lookup, as Campaign Member lookups are not available currently on the platform.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Links the Info Request to a Campaign Member, if one is matched.</inlineHelpText>
+    <label>Campaign Member Id</label>
+    <length>18</length>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

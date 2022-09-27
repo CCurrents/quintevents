@@ -1,0 +1,76 @@
+<!--
+ * Created by joshlequire1 on 9/19/22.
+ -->
+
+<!-- Consent Transaction Related List -->
+<template>
+    <div class="slds-box slds-box_xx-small">
+        <lightning-card>
+            <h3 slot="title">
+                <p class="slds-p-horizontal_small slds-p-top_small">
+                    <lightning-icon icon-name="custom:custom84" size="small"></lightning-icon>
+                    &nbsp;<b>{title}</b>
+                </p>
+            </h3>
+            <template if:true={consentRecords}>
+
+                <template if:true={showTable}>
+                    <lightning-datatable key-field="id" class="myDataTable"
+                                         data={consentRecords} columns={tableColumns}
+                                         hide-checkbox-column
+                                         sorted-by="label" sorted-direction="asc">
+                    </lightning-datatable>
+                </template>
+                <template if:true={showTiles}>
+                    <p class="slds-p-horizontal_small">
+                        <template for:each={consentRecords} for:item="rec">
+                            <lightning-tile label={rec.field} type="media" key={rec.id} href="javascript:void(0)">
+                                <lightning-icon slot="media" icon-name="custom:custom84" size="small"></lightning-icon>
+                    <dl class="slds-dl_horizontal">
+                        <dt class="slds-dl_horizontal__label">
+                            <p class="slds-truncate" title="Id">{rec.Id}</p>
+                        </dt>
+                        <dd class="slds-dl_horizontal__detail slds-tile__meta">
+                            <p class="slds-truncate" title="Name">{rec.Name}</p>
+                        </dd>
+                        <dt class="slds-dl_horizontal__label">
+                            <p class="slds-truncate" title="Contact Name">{rec.Contact__r.Name}</p>
+                        </dt>
+                        <dd class="slds-dl_horizontal__detail slds-tile__meta">
+                            <p class="slds-truncate" title="Lead Name">{rec.Lead__r.Name}</p>
+                        </dd>
+                        <dt class="slds-dl_horizontal__label">
+                            <p class="slds-truncate" title="Type">{rec.Type__c}</p>
+                        </dt>
+                        <dt class="slds-dl_horizontal__label">
+                            <p class="slds-truncate" title="Info Request">{rec.QNGInfoRequest__r.Name}</p>
+                        </dt>
+                        <dd class="slds-dl_horizontal__detail slds-tile__meta">
+                            <p class="slds-truncate" title="Created Date">
+                                <lightning-formatted-date-time year="numeric" month="numeric" day="numeric"
+                                                               hour="2-digit" minute="2-digit"
+                                                               value={rec.CreatedDate}>
+                                </lightning-formatted-date-time>
+                            </p>
+                        </dd>
+                    </dl>
+                    </lightning-tile>
+                </template>
+                </p>
+            </template>
+
+</template>
+<template if:true={error}>
+    An Error has happened reading Consent Transaction records - {error.message}
+</template>
+<template if:false={isFullScreen}>
+    <div slot="footer">
+        <lightning-button variant="base" label="View All" title="View All" onclick={handleViewAll}></lightning-button>
+    </div>
+
+</template>
+
+</lightning-card>
+
+</div>
+</template>
