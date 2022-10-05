@@ -65,6 +65,7 @@ global with sharing class QNGInfoRequest {
             Contact requestorCon = getContactByEmail(infoReq.Requestor_Email__c);
             if (requestorCon != null) {
                 infoReq.Contact__c = requestorCon.Id;
+                //infoReq.Account__c = requestorCon.AccountId; // ADD LATER
                 objRequestResponse_Log.Contact__c = requestorCon.Id;
             }
 
@@ -74,6 +75,7 @@ global with sharing class QNGInfoRequest {
 
             if(infoReq.Contact__c == null && infoReq.Lead__c == null){
                 Lead newLead = new Lead();
+                // ADD MORE DETAIL (have more from Pardot to build Leads today) --> need to handle Latest Event Interest (Pricebook2) for Lead
                 newLead.RecordTypeId = CONSTANTS.LEAD_RECORDTYPE_STANDARD;
                 newLead.FirstName = (string) jsonParsed.get('first_name');
                 newLead.LastName = (string) jsonParsed.get('last_name');
@@ -96,7 +98,7 @@ global with sharing class QNGInfoRequest {
 
             // savepoint sp1 = Database.setSavepoint();
             if (requestorAcc != null) {
-                //infoReq.Account__c = requestorAcc.Id;
+                infoReq.Account__c = requestorAcc.Id;
                 objRequestResponse_Log.Account__c = requestorAcc.Id;
                 updateAccUTMDetails(requestorAcc, infoReq);
             }
@@ -140,7 +142,7 @@ global with sharing class QNGInfoRequest {
 
 
     private static Contact getContactByEmail(string email) {
-        List<Contact> contacts = new List<Contact> ([select Id, name, Email from Contact where Email = :email OR Secondary_Email__c = :email LIMIT 1]);
+        List<Contact> contacts = new List<Contact> ([select Id, name, Email, AccountId from Contact where Email = :email OR Secondary_Email__c = :email LIMIT 1]);
         //system.debug('contact email input = ' + email);
         //system.debug('contact size = ' + contacts.size());
         if (contacts.size() > 0) {

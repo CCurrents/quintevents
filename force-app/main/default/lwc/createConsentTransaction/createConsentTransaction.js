@@ -24,8 +24,8 @@ sourceField = SOURCE_FIELD;
 contactField = CONTACT_FIELD;
 
 programValue;
-typeValue;
-sourceValue;
+typeValue = 'Unsubscribe';
+sourceValue = 'Agent';
 
 // get the Contact Id for this Person Account
 @wire(getRecord, { recordId: '$recordId', fields: PERSONCONTACTID_FIELD })
@@ -50,6 +50,7 @@ handleSourceChange(event){
 }
 
 createConsentTransaction(){
+
     const fields = {
         'Program__c' : this.programValue,
         'Type__c' : this.typeValue,

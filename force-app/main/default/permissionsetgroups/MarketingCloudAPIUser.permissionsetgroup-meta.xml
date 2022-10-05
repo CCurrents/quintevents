@@ -3,6 +3,8 @@
     <description>Contains all permissions necessary for the Marketing Cloud API user to sync data to and from Salesforce and Marketing Cloud.</description>
     <hasActivationRequired>false</hasActivationRequired>
     <label>Marketing Cloud API User</label>
+    <permissionSets>ConsentTransactionAdmin</permissionSets>
+    <permissionSets>ConsentTransactionCreateRead</permissionSets>
     <permissionSets>MarketingCloudConnectedApp</permissionSets>
     <permissionSets>et4ae5__ExactTarget_Integration</permissionSets>
     <permissionSets>et4ae5__ExactTarget_Integration_Admin</permissionSets>

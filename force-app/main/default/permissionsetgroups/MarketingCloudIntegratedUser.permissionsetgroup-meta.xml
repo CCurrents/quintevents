@@ -3,6 +3,7 @@
     <description>Base permissions needed to sync a user in Salesforce and Marketing cloud, purely for end user functionality (not admin or API).</description>
     <hasActivationRequired>false</hasActivationRequired>
     <label>MarketingCloudIntegratedUser</label>
+    <permissionSets>ConsentTransactionCreateRead</permissionSets>
     <permissionSets>MarketingCloudCRUDFLS</permissionSets>
     <permissionSets>MarketingCloudConnectedApp</permissionSets>
     <permissionSets>et4ae5__ExactTarget_Integration</permissionSets>

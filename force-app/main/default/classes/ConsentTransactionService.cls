@@ -10,15 +10,19 @@ public with sharing class ConsentTransactionService {
 
         newCT.Program__c = CampaignSelector.getCampaignByContactSite(infoRec.Contact_Site__c)?.Program__c;
 
-        newCT.Contact__c = infoRec.Contact__c;
-        newCT.CurrencyIsoCode = 'USD';
-        newCT.QNGInfoRequest__c = infoRec.Id;
-        newCT.Lead__c = infoRec.Lead__c;
-        newCT.Source__c = 'Web Form';
-        newCT.ContactSite__c = infoRec.Contact_Site__c;
-        newCT.Type__c = ctType;
+        if (newCT.Program__c != null) {
 
-        insert newCT;
+            newCT.Contact__c = infoRec.Contact__c;
+            newCT.CurrencyIsoCode = CONSTANTS.CURRENCY_ISO_CODE_USD;
+            newCT.QNGInfoRequest__c = infoRec.Id;
+            newCT.Lead__c = infoRec.Lead__c;
+            newCT.Source__c = CONSTANTS.CONSENT_TRANSACTION_SOURCE_WEBFORM;
+            newCT.ContactSite__c = infoRec.Contact_Site__c;
+            newCT.Type__c = ctType;
+
+            insert newCT;
+
+        }
 
         return newCT;
 

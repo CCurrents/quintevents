@@ -74,14 +74,10 @@ export default class consentTransactionRelatedList extends NavigationMixin(Light
         return [
             {label: 'Id', fieldName: 'Id'},
             {label: 'Name', fieldName: 'Name'},
-            {label: 'Contact Name', fieldName: 'Contact__r.Name'},
-            {label: 'Lead Name', fieldName: 'Lead__r.Name'},
+            {label: 'Created', fieldName: 'CreatedDate', type: 'date', typeAttributes: {year: "numeric", month: "numeric", day: "numeric", hour: "2-digit", minute: "2-digit"}},
+            {label: 'Source', fieldName: 'Source__c'},
             {label: 'Type', fieldName: 'Type__c'},
-            {label: 'Info Request', fieldName: 'QNGInfoRequest__r.Name'},
-            {
-                label: 'Created', fieldName: 'CreatedDate', type: 'date',
-                typeAttributes: {year: "numeric", month: "numeric", day: "numeric", hour: "2-digit", minute: "2-digit"}
-            }
+            {label: 'Info Request', fieldName: 'QNGInfoRequest__r.Name'}
         ];
     }
 
