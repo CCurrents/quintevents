@@ -5,7 +5,7 @@
 public with sharing class ConsentTransactionService {
 
     public static ConsentTransaction__c createConsentTransactionFromInfoRequest(QNG_Info_Request__c infoRec, String ctType) {
-
+        List<ConsentTransaction__c> newCTs = new List<ConsentTransaction__c>();
         ConsentTransaction__c newCT = new ConsentTransaction__c();
 
         newCT.Program__c = CampaignSelector.getCampaignByContactSite(infoRec.Contact_Site__c)?.Program__c;
@@ -20,11 +20,12 @@ public with sharing class ConsentTransactionService {
             newCT.ContactSite__c = infoRec.Contact_Site__c;
             newCT.Type__c = ctType;
 
-            insert newCT;
+            newCTs.add(newCT);
+            Utility.processRecords(newCTs, 'insert');
 
         }
 
-        return newCT;
+        return newCTs[0];
 
     }
 

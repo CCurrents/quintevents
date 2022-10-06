@@ -85,11 +85,11 @@ public without sharing class ConsentTransactionTriggerHandler {
 
                 try {
                     if (ctUpdatesFromMatchedCMs.size() > 0) {
-                        update ctUpdatesFromMatchedCMs;
+                        Utility.processRecords(ctUpdatesFromMatchedCMs, 'update');
                     }
 
                     if (newCMs.size() > 0) {
-                        insert newCMs;
+                        Utility.processRecords(newCMs, 'insert');
 
                         for (CampaignMember cm : newCMs) {
                             ConsentTransaction__c ct = new ConsentTransaction__c();
@@ -111,7 +111,7 @@ public without sharing class ConsentTransactionTriggerHandler {
                         }
 
                         if (ctUpdatesFromNewCMs.size() > 0) {
-                            update ctUpdatesFromNewCMs;
+                            Utility.processRecords(ctUpdatesFromNewCMs, 'update');
                         }
 
                     }

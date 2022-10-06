@@ -11,7 +11,7 @@
  * 2.0    4/2/2020   lpanchal@addonblue.com    Update to use util class 
  * 2.1      3/16/2020   jagrawal@addonblue.com  Refactored class with proper comments and code
 **/
-@isTest
+@IsTest
 public class TestDataFactory {
 
 
@@ -80,9 +80,9 @@ public class TestDataFactory {
 
         // Create Event Products and Packages
         // Get Product2 record types
-        Id recordTypeProduct = [Select Id, Name From RecordType Where sObjectType = 'Product2' and DeveloperName = 'Products'].Id;
-        Id recordTypeHotel = [Select Id, Name From RecordType Where sObjectType = 'Product2' and DeveloperName = 'Hotels'].Id;
-        Id recordTypePackage = [Select Id, Name From RecordType Where sObjectType = 'Product2' and DeveloperName = 'Package'].Id;
+        Id recordTypeProduct = [SELECT Id, Name FROM RecordType WHERE sObjectType = 'Product2' AND DeveloperName = 'Products'].Id;
+        Id recordTypeHotel = [SELECT Id, Name FROM RecordType WHERE sObjectType = 'Product2' AND DeveloperName = 'Hotels'].Id;
+        Id recordTypePackage = [SELECT Id, Name FROM RecordType WHERE sObjectType = 'Product2' AND DeveloperName = 'Package'].Id;
 
         // Products to insert
         List<Product2> productsToInsert = new List<Product2>();
@@ -377,6 +377,23 @@ public class TestDataFactory {
         }
         lstAccount = Utility.processRecords(lstAccount, 'insert');
         return lstAccount;
+    }
+
+    public static List<Account> createPersonAccounts(Integer numberOfRecords) {
+        List<Account> newPAs = new List<Account>();
+        for (Integer i = 0; i < numberOfRecords; i++) {
+            Account newPA = new Account();
+            newPA.RecordTypeId = CONSTANTS.ACCOUNT_RECORDTYPE_PERSONACCOUNT;
+            Integer randomNumber = Integer.valueOf(Math.random()*1000);
+            newPA.FirstName = 'Test';
+            newPA.LastName = 'LastName' + String.valueOf(randomNumber);
+            newPA.PersonEmail = newPA.LastName + '@test.com';
+            newPAs.add(newPA);
+        }
+
+        List<Account> returnedPAs = Utility.processRecords(newPAs, 'insert');
+
+        return returnedPAs;
     }
 
     //////////////////////////////////////////////   Account Section Ends   //////////////////////////////////////////////
@@ -1036,7 +1053,7 @@ public class TestDataFactory {
     **/
     public static List<Product2> createProduct(Integer NoofRecords, String RecordType) {
         List<Product2> lstProduct = new List<Product2>();
-        Id recordTypeId = [Select Id, Name From RecordType Where sObjectType = 'Product2' and Name = :RecordType].Id;
+        Id recordTypeId = [SELECT Id, Name FROM RecordType WHERE sObjectType = 'Product2' AND Name = :RecordType].Id;
         for (integer i = 0; i < NoofRecords; i++) {
             Product2 objProduct = new Product2(
                     Name = 'Testdata123 - ' + Utility.getRandomNumber().SubString(0, 8),
@@ -1072,7 +1089,7 @@ public class TestDataFactory {
     **/
     public static List<Product2> createProduct(Integer NoofRecords, String RecordType, Id PricebookId, Boolean dmlFlag) {
         List<Product2> lstProduct = new List<Product2>();
-        Id recordTypeId = [Select Id, Name From RecordType Where sObjectType = 'Product2' and Name = :RecordType].Id;
+        Id recordTypeId = [SELECT Id, Name FROM RecordType WHERE sObjectType = 'Product2' AND Name = :RecordType].Id;
         for (integer i = 0; i < NoofRecords; i++) {
             Product2 objProduct = new Product2(
                     Name = 'Test Product ' + Utility.getRandomNumber().SubString(0, 8) + i,
@@ -1092,7 +1109,7 @@ public class TestDataFactory {
 
     public static Product2 createProduct(String ProductName, String RecordType, String ProductType, Id ParentPackageId, Id PricebookId) {
         Product2 objProduct = new product2();
-        objProduct.RecordTypeId = [Select Id, Name From RecordType Where sObjectType = 'Product2' and Name = :RecordType].Id;
+        objProduct.RecordTypeId = [SELECT Id, Name FROM RecordType WHERE sObjectType = 'Product2' AND Name = :RecordType].Id;
         objProduct.Name = ProductName;
         objProduct.Primary_Price_Book__c = PricebookId;
         objProduct.Type__c = ProductType;
@@ -1115,7 +1132,7 @@ public class TestDataFactory {
     **/
     public static List<Inventory_Transaction__c> createInventoryTransaction(Integer NoOfRecords, String RecordType, String ProductId) {
         List<Inventory_Transaction__c> lstInventoryTransaction = new List<Inventory_Transaction__c>();
-        Id recordTypeId = [Select Id, Name From RecordType Where sObjectType = 'Inventory_Transaction__c' and Name = :RecordType].Id;
+        Id recordTypeId = [SELECT Id, Name FROM RecordType WHERE sObjectType = 'Inventory_Transaction__c' AND Name = :RecordType].Id;
 
         for (integer i = 0; i < NoOfRecords; i++) {
             Inventory_Transaction__c objTransaction = new Inventory_Transaction__c(
@@ -1273,7 +1290,7 @@ public class TestDataFactory {
 
     public static List<Gift_Code__c> createGiftCode(Integer NoofRecords, Id OpportunityId, Id OrderId) {
         System.debug('In Gift Code');
-        List<RecordType> lstRecordforF1 = [Select id from RecordType where sobjecttype = 'Gift_Code__c' and (name = :'F1 Access Code' OR name = :'Memento Premium' OR name = :'Fanatics Gift Code' OR name = :'Memento Ultimate')];
+        List<RecordType> lstRecordforF1 = [SELECT id FROM RecordType WHERE sobjecttype = 'Gift_Code__c' AND (name = :'F1 Access Code' OR name = :'Memento Premium' OR name = :'Fanatics Gift Code' OR name = :'Memento Ultimate')];
 
 
         List<Gift_Code__c> lstGiftCodes = new List<Gift_Code__c>();
@@ -1291,7 +1308,7 @@ public class TestDataFactory {
     }
 
     public static List<Gift_Code__c> createGiftCode(Integer NoofRecords, Boolean dmlFlag) {
-        List<RecordType> lstRecordforF1 = [Select id from RecordType where sobjecttype = 'Gift_Code__c' and (name = :'F1 Access Code' OR name = :'Memento Premium' OR name = :'Fanatics Gift Code' OR name = :'Memento Ultimate')];
+        List<RecordType> lstRecordforF1 = [SELECT id FROM RecordType WHERE sobjecttype = 'Gift_Code__c' AND (name = :'F1 Access Code' OR name = :'Memento Premium' OR name = :'Fanatics Gift Code' OR name = :'Memento Ultimate')];
         List<Gift_Code__c> lstGiftCodes = new List<Gift_Code__c>();
         for (integer i = 0; i < NoofRecords; i++) {
             Gift_Code__c objGiftCode = new Gift_Code__c(
@@ -1709,7 +1726,7 @@ public class TestDataFactory {
     **/
     public static Payment_Term__c createPaymentTerm() {
         Order objOrder = createOrder();
-        Quote objquote = [Select id, OpportunityId from Quote where Id = :objOrder.QuoteId];
+        Quote objquote = [SELECT id, OpportunityId FROM Quote WHERE Id = :objOrder.QuoteId];
         return createPaymentTerm(1, objquote.OpportunityId, objOrder.QuoteId, objOrder.Id)[0];
     }
     /**
@@ -1719,7 +1736,7 @@ public class TestDataFactory {
     **/
     public static Payment_Term__c createPaymentTerm(Decimal PercentageOfPayment) {
         Order objOrder = createOrder();
-        Quote objquote = [Select id, OpportunityId from Quote where Id = :objOrder.QuoteId];
+        Quote objquote = [SELECT id, OpportunityId FROM Quote WHERE Id = :objOrder.QuoteId];
         return createPaymentTerm(1, objquote.OpportunityId, objOrder.QuoteId, objOrder.Id, PercentageOfPayment)[0];
     }
     /**
@@ -2042,27 +2059,81 @@ public class TestDataFactory {
     /**
     * @description
     * @author Josh LeQuire | 9/29/2022
-    * @param Program__c
+    * @param Program__c program
     * @return Campaign
     **/
 
     public static Campaign createProgramCampaign(Program__c program) {
+        List<Campaign> newCPs = new List<Campaign>();
+
         Campaign cp = new Campaign(
                 Name = 'Test Campaign',
                 RecordTypeId = CONSTANTS.CAMPAIGN_RECORDTYPE_OTHER,
                 Type = 'Email',
                 IsActive = true,
                 Program__c = program.Id,
-                ContactSite__c = CONSTANTS.CAMPAIGN_CONTACT_SITE_VALUE
+                ContactSite__c = CONSTANTS.CAMPAIGN_CONTACT_SITE_TEST_VALUE
         );
 
-        insert cp;
+        newCPs.add(cp);
 
-        return cp;
+        List<Campaign> returnedCPs = Utility.processRecords(newCPs, 'insert');
+        Campaign returnedCP = returnedCPs[0];
+
+        return returnedCP;
 
     }
 
     //////////////////////////////////////////////   Campaign Section Ends   //////////////////////////////////////////////
+
+    //////////////////////////////////////////////   Campaign Member Section Begins   //////////////////////////////////////////////
+
+    public static List<CampaignMember> createCampaignMembersForCampaign(Campaign inputCampaign, List<Lead> leadCMs, List<Contact> contactCMs) {
+        List<CampaignMember> newCMs = new List<CampaignMember>();
+
+        for (Lead ld : leadCMs) {
+            CampaignMember newCM = new CampaignMember();
+            newCM.CampaignId = inputCampaign.Id;
+            newCM.LeadId = ld.Id;
+            newCMs.add(newCM);
+        }
+
+        for(Contact ct: contactCMs){
+             CampaignMember newCM = new CampaignMember();
+            newCM.CampaignId = inputCampaign.Id;
+            newCM.ContactId = ct.Id;
+            newCMs.add(newCM);
+        }
+
+        List<CampaignMember> returnedCMs = Utility.processRecords(newCMs, 'insert');
+
+        return returnedCMs;
+    }
+
+    ///
+    public static void createCampaignMemberHarness(){
+        createTriggerSettingsEntry();
+        List<Lead> newLeads = createLead(25);
+        List<Account> newPersonAccounts = createPersonAccounts(25);
+        Program__c testProgram = createProgram()[0];
+        Campaign testProgramCampaign = createProgramCampaign(testProgram);
+
+        List<Account> newPAsWithContactIds = [SELECT Id, FirstName, LastName, PersonEmail, PersonContactId FROM Account WHERE Id IN :newPersonAccounts];
+
+        List<Lead> leadsForCMs = new List<Lead>();
+        List<Contact> contactsForCMs = new List<Contact>();
+
+        for (Integer i = 0; i < 5; i++){
+            Lead cmLead = newLeads[i];
+            leadsForCMs.add(cmLead);
+            Contact cmContact = new Contact();
+            cmContact.Id = newPAsWithContactIds[i].PersonContactId;
+            contactsForCMs.add(cmContact);
+        }
+
+        createCampaignMembersForCampaign(testProgramCampaign, leadsForCMs, contactsForCMs);
+
+    }
 
     //////////////////////////////////////////////   Package Product Starts   //////////////////////////////////////////////
 
