@@ -97,6 +97,6 @@ private class ConsentTransactionTriggerHandlerTest {
         // Ensure the CTs created for Existing CMs have those CM campaign Ids on them
         List<ConsentTransaction__c> verifyNewCtsForExistingCMs = [SELECT Id FROM ConsentTransaction__c WHERE (Lead__c IN :existingLeadCMsSelected OR Contact__c IN :existingContactCMsSelected) AND CampaignMemberId__c != NULL];
         System.assert(verifyNewCtsForExistingCMs.size() == 4);
-
+        
     }
 }

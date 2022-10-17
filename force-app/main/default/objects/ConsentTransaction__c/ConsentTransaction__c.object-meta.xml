@@ -172,9 +172,9 @@
         <searchResultsAdditionalFields>Contact__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>Lead__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>QNGInfoRequest__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Program__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>Source__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>Type__c</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>CampaignMemberId__c</searchResultsAdditionalFields>
     </searchLayouts>
     <sharingModel>ReadWrite</sharingModel>
     <visibility>Public</visibility>

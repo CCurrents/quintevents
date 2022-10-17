@@ -75,7 +75,7 @@ global with sharing class QNGInfoRequest {
 
             if(infoReq.Contact__c == null && infoReq.Lead__c == null){
                 Lead newLead = new Lead();
-                // ADD MORE DETAIL (have more from Pardot to build Leads today) --> need to handle Latest Event Interest (Pricebook2) for Lead
+                // ADD MORE DETAIL (have more from Pardot today) --> need to handle Latest Event Interest (Pricebook2) for Lead
                 newLead.RecordTypeId = CONSTANTS.LEAD_RECORDTYPE_STANDARD;
                 newLead.FirstName = (string) jsonParsed.get('first_name');
                 newLead.LastName = (string) jsonParsed.get('last_name');

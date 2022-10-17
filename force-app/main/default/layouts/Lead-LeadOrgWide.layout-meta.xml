@@ -483,7 +483,7 @@
     <platformActionList>
         <actionListContext>Record</actionListContext>
         <platformActionListItems>
-            <actionName>Lead.NewConsentTransaction</actionName>
+            <actionName>Lead.NewConsentTransactionLead</actionName>
             <actionType>QuickAction</actionType>
             <sortOrder>0</sortOrder>
         </platformActionListItems>

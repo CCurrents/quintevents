@@ -22,7 +22,7 @@ public with sharing class QNGInfoRequestTest {
     @TestSetup static void makeData() {
         TestDataFactory.createTriggerSettingsEntry();
         Program__c program = TestDataFactory.createProgram()[0];
-        TestDataFactory.createProgramCampaign(program);
+        TestDataFactory.createProgramCampaigns(program);
 
     }
 
