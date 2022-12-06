@@ -1,0 +1,10 @@
+@font-face {
+    font-family: "Formula1Display";
+    src: url("https://d27modciwo5g5k.cloudfront.net/Formula1-Display-Black.otf") format("opentype"), url("https://d27modciwo5g5k.cloudfront.net/Formula1-Display-Bold.otf") format("opentype"), url("https://d27modciwo5g5k.cloudfront.net/Formula1-Display-Italic.otf") format("opentype"),
+    url("https://d27modciwo5g5k.cloudfront.net/Formula1-Display-Regular.otf") format("opentype"), url("https://d27modciwo5g5k.cloudfront.net/Formula1-Display-Wide.otf") format("opentype");
+}
+
+@font-face {
+    font-family: "Titillium";
+    src: url("https://d27modciwo5g5k.cloudfront.net/Titillium-Black.ttf") format("truetype"), url("https://d27modciwo5g5k.cloudfront.net/Titillium-Bold.ttf") format("truetype"), url("https://d27modciwo5g5k.cloudfront.net/Titillium-BoldItalic.ttf") format("truetype"), url("https://d27modciwo5g5k.cloudfront.net/Titillium-ExtraLight.ttf") format("truetype"), url("https://d27modciwo5g5k.cloudfront.net/Titillium-ExtraLightItalic.ttf") format("truetype"), url("https://d27modciwo5g5k.cloudfront.net/Titillium-Italic.ttf") format("truetype"), url("https://d27modciwo5g5k.cloudfront.net/Titillium-Light.ttf") format("truetype"), url("https://d27modciwo5g5k.cloudfront.net/Titillium-LightItalic.ttf") format("truetype"), url("https://d27modciwo5g5k.cloudfront.net/Titillium-Regular.ttf") format("truetype"), url("https://d27modciwo5g5k.cloudfront.net/Titillium-SemiBold.ttf") format("truetype"), url("https://d27modciwo5g5k.cloudfront.net/Titillium-SemiBoldItalic.ttf") format("truetype")
+}

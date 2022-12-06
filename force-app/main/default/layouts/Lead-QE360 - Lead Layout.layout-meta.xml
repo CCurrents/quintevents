@@ -602,6 +602,7 @@
         <excludeButtons>New</excludeButtons>
         <fields>NAME</fields>
         <fields>Program__c</fields>
+        <fields>EventInterest__c</fields>
         <fields>Type__c</fields>
         <fields>Source__c</fields>
         <fields>QNGInfoRequest__c</fields>

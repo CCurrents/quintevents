@@ -21,7 +21,7 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Program__c</field>
+                <field>EventInterest__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>
@@ -36,6 +36,10 @@
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>ContactSite__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Program__c</field>
             </layoutItems>
         </layoutColumns>
         <style>TwoColumnsTopToBottom</style>

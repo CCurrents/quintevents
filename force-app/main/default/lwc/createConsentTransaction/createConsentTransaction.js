@@ -7,7 +7,7 @@ import { getRecord, getFieldValue, createRecord } from 'lightning/uiRecordApi';
 import { ShowToastEvent } from 'lightning/platformShowToastEvent';
 import { CloseActionScreenEvent } from 'lightning/actions';
 import CONSENTTRANSACTION_OBJECT from '@salesforce/schema/ConsentTransaction__c';
-import PROGRAM_FIELD from '@salesforce/schema/ConsentTransaction__c.Program__c';
+import EVENTINTEREST_FIELD from '@salesforce/schema/ConsentTransaction__c.EventInterest__c';
 import TYPE_FIELD from '@salesforce/schema/ConsentTransaction__c.Type__c';
 import SOURCE_FIELD from '@salesforce/schema/ConsentTransaction__c.Source__c';
 import CONTACT_FIELD from '@salesforce/schema/ConsentTransaction__c.Contact__c';
@@ -18,12 +18,12 @@ export default class CreateConsentTransaction extends LightningElement {
 @api recordId;
 
 consentTransactionObject = CONSENTTRANSACTION_OBJECT;
-programField = PROGRAM_FIELD;
+eventInterestField = EVENTINTEREST_FIELD;
 typeField = TYPE_FIELD;
 sourceField = SOURCE_FIELD;
 contactField = CONTACT_FIELD;
 
-programValue;
+eventInterestValue;
 typeValue = 'Unsubscribe';
 sourceValue = 'Agent';
 
@@ -37,8 +37,8 @@ get personContactId() {
 
 // detect changes to form fields for record creation
 
-handleProgramChange(event){
-    this.programValue = event.target.value;
+handleEventInterestChange(event){
+    this.EventInterestValue = event.target.value;
 }
 
 handleTypeChange(event){
@@ -52,7 +52,7 @@ handleSourceChange(event){
 createConsentTransaction(){
 
     const fields = {
-        'Program__c' : this.programValue,
+        'EventInterest__c' : this.eventInterestValue,
         'Type__c' : this.typeValue,
         'Source__c' : this.sourceValue,
         'Contact__c' : this.personContactId
