@@ -2,7 +2,7 @@
 <QuickAction xmlns="http://soap.sforce.com/2006/04/metadata">
     <description>Create new consent transaction (flow).</description>
     <flowDefinition>CreateConsentTransaction</flowDefinition>
-    <label>Create New Consent Transaction 2</label>
+    <label>Create New Consent Transaction</label>
     <optionsCreateFeedItem>false</optionsCreateFeedItem>
     <type>Flow</type>
 </QuickAction>

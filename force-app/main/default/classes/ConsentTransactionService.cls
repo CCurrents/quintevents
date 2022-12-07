@@ -8,7 +8,8 @@ public with sharing class ConsentTransactionService {
         List<ConsentTransaction__c> newCTs = new List<ConsentTransaction__c>();
         ConsentTransaction__c newCT = new ConsentTransaction__c();
 
-        newCT.Program__c = CampaignSelector.getCampaignByContactSite(infoRec.Contact_Site__c)?.Program__c;
+        // UPDATE THIS WITH PROGRAM FROM PRICEBOOK / EVENT (EVENT INTEREST)
+        //newCT.Program__c = CampaignSelector.getCampaignByContactSite(infoRec.Contact_Site__c)?.Program__c;
 
         if (newCT.Program__c != null) {
 
