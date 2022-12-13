@@ -402,7 +402,7 @@
     <platformActionList>
         <actionListContext>Record</actionListContext>
         <platformActionListItems>
-            <actionName>Account.NewConsentTransaction2</actionName>
+            <actionName>Account.CreateNewConsentTransaction</actionName>
             <actionType>QuickAction</actionType>
             <sortOrder>0</sortOrder>
         </platformActionListItems>

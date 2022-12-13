@@ -482,7 +482,7 @@
     <platformActionList>
         <actionListContext>Record</actionListContext>
         <platformActionListItems>
-            <actionName>Lead.CreateNewConsentTransaction2</actionName>
+            <actionName>Lead.CreateNewConsentTransaction</actionName>
             <actionType>QuickAction</actionType>
             <sortOrder>0</sortOrder>
         </platformActionListItems>
