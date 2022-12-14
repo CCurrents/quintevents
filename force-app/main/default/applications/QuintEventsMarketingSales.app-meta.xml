@@ -138,7 +138,7 @@
     <isNavAutoTempTabsDisabled>false</isNavAutoTempTabsDisabled>
     <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
     <isNavTabPersistenceDisabled>false</isNavTabPersistenceDisabled>
-    <label>QuintEvents Marketing &amp; Sales</label>
+    <label>QuintEvents Marketing Sales</label>
     <navType>Console</navType>
     <profileActionOverrides>
         <actionName>View</actionName>
@@ -169,7 +169,7 @@
     <tabs>standard-Order</tabs>
     <tabs>et4ae5__ExactTargetPhoenix</tabs>
     <uiType>Lightning</uiType>
-    <utilityBar>QEMarketingSales_UtilityBar</utilityBar>
+    <utilityBar>QuintEvents_Marketing_Sales_UtilityBar</utilityBar>
     <workspaceConfig>
         <mappings>
             <tab>ConsentTransaction__c</tab>

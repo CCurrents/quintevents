@@ -134,7 +134,7 @@
         <name>backgroundComponents</name>
         <type>Background</type>
     </flexiPageRegions>
-    <masterLabel>Marketing Cloud Admin UtilityBar</masterLabel>
+    <masterLabel>QuintEvents Marketing Sales UtilityBar</masterLabel>
     <template>
         <name>one:utilityBarTemplateDesktop</name>
         <properties>
